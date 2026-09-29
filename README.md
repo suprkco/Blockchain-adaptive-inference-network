@@ -1,41 +1,44 @@
 # Blockchain Essentials
 
-This repository contains a collection of Solidity smart contracts with accompanying Hardhat test scripts, showcasing fundamental functionalities for Ethereum-based decentralized applications (DApps).
-Contracts Overview
+## Problem
 
-## Greeter Contract
+Small contracts help make smart-contract state and access rules inspectable.
+This educational repository contains greeting, time-lock and number-storage examples with JavaScript tests.
 
-The Greeter contract is a simple, introductory contract in Solidity. It allows the storage and retrieval of a greeting message. Key functionalities include:
+## Demo
 
-    Setting an initial greeting upon deployment.
-    Allowing the greeting to be read and updated.
+Local Hardhat examples only; no public deployment is claimed.
 
-## Lock Contract
+## Architecture
 
-The Lock contract demonstrates a time-based locking mechanism. It's designed to lock ether for a specified period. Notable features:
-
-    Allows sending ether to the contract, locking it until a predefined unlock time.
-    Ensures ether can only be withdrawn after the unlock time by the owner.
-    Includes safeguards to prevent premature withdrawals and unauthorized access.
-
-## NumberStorage Contract
-
-The NumberStorage contract is a basic contract for storing and retrieving numbers. It serves as an example of mapping and event emission in Solidity. Features include:
-
-    Storing a number associated with an Ethereum address.
-    Retrieving the stored number with the option to return zero for addresses that haven't stored a number.
-    Emitting an event whenever a number is stored.
-
-## Testing
-
-All contracts are thoroughly tested using Hardhat's testing framework, ensuring reliability and correct functionality. Test results confirm successful deployment and operation of all contract functionalities.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+```mermaid
+flowchart LR
+    A[JavaScript tests] --> B[Hardhat local network]
+    C[Deployment script] --> B
+    B --> D[Solidity contracts]
 ```
+
+## Tech stack
+
+Solidity, JavaScript, Hardhat and Hardhat Toolbox.
+
+## Quickstart
+
+```sh
+npm ci
+npx hardhat test
+```
+
+Use the project-local Hardhat installation. The dependencies and test results have not been revalidated during this documentation refresh.
+
+## Evaluation
+
+Test files exist for Greeter, Lock and NumberStorage. No pass count, coverage result or security audit is claimed.
+
+## Design choices
+
+Each contract demonstrates a small behavior; tests are separated from contracts and deployment code to support local inspection.
+
+## Limitations and next steps
+
+Educational code only. Revalidate dependencies and tests, simplify the dependency manifest, add CI, and document test coverage before considering any deployment involving assets of value.
