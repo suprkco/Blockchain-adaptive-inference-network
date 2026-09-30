@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-09-30T08:39:02.257Z",
+  "node": "v24.18.1",
+  "scope": "Two local child processes; untrained 2-block transformer; local EVM; no LLM quality or network speedup claim.",
+  "modelHash": "0x6d9b640a7f2fbcf63481bdf45ffb04448f2587aa933946924c2987a9657b2aae",
+  "inputHash": "0xe9710e8453e675d72e757dc33dccfa4a360d368b83189bdf0130ca29336abc4f",
+  "jobId": "0x1c546a09ae72a4bd19ab5c59ad426eff97876a9b57debfb3f61ec2826ddb229d",
+  "requester": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "receipts": [
+    {
+      "stage": 0,
+      "pid": 21684,
+      "inputHash": "0xe9710e8453e675d72e757dc33dccfa4a360d368b83189bdf0130ca29336abc4f",
+      "outputHash": "0x7defc83aba0289efc248515e80b6721f498f47e2fd0b0ca4c21a39441300e9e8"
+    },
+    {
+      "stage": 1,
+      "pid": 17312,
+      "inputHash": "0x7defc83aba0289efc248515e80b6721f498f47e2fd0b0ca4c21a39441300e9e8",
+      "outputHash": "0x588839a6cd33df39d9dfb3a3efacddaef472ad392c7aeb164cf4454ecfd2272f"
+    }
+  ],
+  "maxAbsoluteError": 0,
+  "pipelineElapsedMs": 152.8137999999999,
+  "createGas": "183256",
+  "receiptGas": [
+    "42969",
+    "42981"
+  ],
+  "completedStages": 2,
+  "outputHash": "0x588839a6cd33df39d9dfb3a3efacddaef472ad392c7aeb164cf4454ecfd2272f"
+}

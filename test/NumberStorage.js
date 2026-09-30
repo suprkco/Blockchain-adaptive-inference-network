@@ -1,4 +1,7 @@
-const { expect } = require("chai");
+import { network } from 'hardhat';
+const { ethers, networkHelpers } = await network.create('hardhat');
+const { time, loadFixture } = networkHelpers;
+import { expect } from 'chai';
 
 describe("NumberStorage contract", function () {
   let NumberStorage;

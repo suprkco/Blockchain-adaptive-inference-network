@@ -1,34 +1,35 @@
-const hre = require("hardhat");
+import { network } from 'hardhat';
+const { ethers } = await network.create('hardhat');
 
 async function main() {
     // Déploiement du contrat Lock
-    const Lock = await hre.ethers.getContractFactory("Lock");
+    const Lock = await ethers.getContractFactory("Lock");
     const currentTimestampInSeconds = Math.round(Date.now() / 1000);
     const unlockTime = currentTimestampInSeconds + 60;
-    const lockedAmount = hre.ethers.utils.parseEther("0.001");
+    const lockedAmount = ethers.parseEther("0.001");
 
     const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-    // Removed await lock.deployed();
+    await lock.waitForDeployment();
 
     console.log(
-        `Lock with ${hre.ethers.utils.formatEther(
+        `Lock with ${ethers.formatEther(
             lockedAmount
-        )} ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
+        )} ETH and unlock timestamp ${unlockTime} deployed to ${await lock.getAddress()}`
     );
 
     // Déploiement du contrat NumberStorage
-    const NumberStorage = await hre.ethers.getContractFactory("NumberStorage");
+    const NumberStorage = await ethers.getContractFactory("NumberStorage");
     const numberStorage = await NumberStorage.deploy();
-    // Removed await numberStorage.deployed();
+    await numberStorage.waitForDeployment();
 
-    console.log("NumberStorage deployed to:", numberStorage.address);
+    console.log("NumberStorage deployed to:", await numberStorage.getAddress());
 
     // Déploiement du contrat Greeter
-    const Greeter = await hre.ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, Monsieur Ducray!");
-    // Removed await greeter.deployed();
+    const Greeter = await ethers.getContractFactory("Greeter");
+    const greeter = await Greeter.deploy("Hello, local chain!");
+    await greeter.waitForDeployment();
 
-    console.log("Greeter deployed to:", greeter.address);
+    console.log("Greeter deployed to:", await greeter.getAddress());
 }
 
 main()

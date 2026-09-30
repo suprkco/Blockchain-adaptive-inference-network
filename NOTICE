@@ -1,0 +1,9 @@
+The new InferenceRegistry, compute pipeline, tests and documentation are original
+AI-assisted portfolio work by Kilian Codaccioni, licensed under MIT.
+
+The original Greeter, NumberStorage and Lock learning examples are retained.
+Their existing SPDX notices are preserved; contracts/Lock.sol is marked
+UNLICENSED. The root MIT license does not override that existing notice.
+
+Petals and Ethereum documentation are cited as background. No Petals source,
+trained model weights or upstream benchmark results are included.
