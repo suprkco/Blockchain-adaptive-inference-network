@@ -1,9 +1,9 @@
 # Five-minute interview walkthrough
 
-1. Run `npm run demo`. Show two worker process IDs, two ordered on-chain receipts and split/reference numerical agreement.
-2. Explain blockchain blocks versus transformer blocks: validators record transactions, while off-chain workers compute model layers.
-3. Show the contract test that accepts a deliberately fabricated output hash from an authorized worker. Explain why this is an explicitly documented trust limit.
-4. Trace the causal-attention test and the worker timeout. Explain what each test establishes and what it does not.
-5. Discuss when blockchain adds value: independently controlled participants needing a shared audit trail. Explain why it does not automatically improve inference speed or make a centralized coordinator decentralized.
+1. Open evaluation/embedding-benchmark.json and the README table. Explain why the measured split path is slower than the local model on this host.
+2. Run npm run benchmark using the documented Python environment. Trace encoder layers 0-2, binary activations, layers 3-5, masked pooling and normalized embeddings.
+3. Distinguish local forward time, split time, tensor codec subset, local ledger time and measured end-to-end time. Local automining is not distributed consensus.
+4. Show padding invariance and the crash/stall tests. The report contains observations, not claims of automatic recovery or adversarial correctness.
+5. Show the contract accepting a fabricated hash from an authorized worker. Explain why a second conflicting hash cannot determine who should be slashed.
 
-Describe the current demo as an untrained transformer fixture and local EVM prototype. Do not claim a trained LLM, GPU pooling, multi-machine validation, throughput gains or production security. Extending to those capabilities requires further implementation and measurements.
+This is a trained-model benchmarking project with a research proposal for adaptive networks. It is not a production DePIN service, proof-of-inference protocol or generative LLM. The next experiment should use two physical machines and controlled links, with an ordinary database as a comparison.

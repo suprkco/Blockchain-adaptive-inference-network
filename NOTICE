@@ -7,3 +7,9 @@ UNLICENSED. The root MIT license does not override that existing notice.
 
 Petals and Ethereum documentation are cited as background. No Petals source,
 trained model weights or upstream benchmark results are included.
+
+The trained-model benchmark downloads sentence-transformers/all-MiniLM-L6-v2
+from Hugging Face at a pinned revision. Its model card identifies Apache-2.0.
+Weights are not redistributed here; model authorship and training results
+remain with the upstream authors. This repository reports its own systems
+measurements, not upstream model-quality results.

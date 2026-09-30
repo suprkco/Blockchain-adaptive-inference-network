@@ -1,92 +1,101 @@
-# Blockchain Inference Lab
+# Adaptive Inference Network
 
-[![CI](https://github.com/suprkco/Blockchain-Essentials/actions/workflows/ci.yml/badge.svg)](https://github.com/suprkco/Blockchain-Essentials/actions/workflows/ci.yml)
+[![CI](https://github.com/suprkco/Blockchain-adaptive-inference-network/actions/workflows/ci.yml/badge.svg)](https://github.com/suprkco/Blockchain-adaptive-inference-network/actions/workflows/ci.yml)
 
-**Split transformer computation off-chain, with ordered receipts on a local Ethereum-compatible chain.**
+**A trained-model benchmark for split inference and blockchain accounting overhead.**
+
+[White paper v0.2](docs/whitepaper.md) | [PDF](output/pdf/adaptive-inference-network-whitepaper-v0.2.pdf) | [Methodology](docs/benchmark.md) | [Verification decision](docs/verification-decision.md)
 
 ## Problem
 
-Independent compute participants need an agreed record of who was assigned a task and what result they submitted.
-This prototype separates model-block computation from blockchain accounting, and makes the gap between signed receipts and verified computation explicit.
+Distributing inference introduces computation, transport and accounting costs that should be measured separately.
+This repository asks whether splitting a real embedding model offers useful tradeoffs, and shows exactly what an on-chain receipt can and cannot establish.
 
 ## Demo
 
-```sh
-npm ci --ignore-scripts
-npm run demo
+The primary experiment runs **all-MiniLM-L6-v2**, a trained sentence-embedding model, on CPU. The first persistent worker owns embeddings and encoder layers 0-2; the second owns layers 3-5 and masked mean pooling with L2 normalization. Both run on one host with binary IPC relayed through the coordinator.
+
+```console
+MiniLM / trained embeddings / CPU / milliseconds (p50)
+CASE                 LOCAL    SPLIT    CODEC    LEDGER   END-TO-END
+single-short            10.50    12.41     0.66     4.80    17.90
+batch-four              21.02    23.47     0.70     5.11    29.97
+batch-two-long          66.56    72.21     0.83     4.92    78.14
 ```
 
-The terminal displays two real child-process IDs, two recorded stage receipts, local gas usage and numerical error against a single-process reference. It saves machine-readable observations in `evaluation/demo.json`. The chain is ephemeral: no wallet, private key, public deployment or real funds are required.
-
-**Scope:** a two-block, width-8, untrained causal transformer fixture. It computes numeric activations, not meaningful generated text. Both workers and the EVM run on one computer. This is not a trained LLM, GPU swarm, multi-machine deployment or new blockchain consensus algorithm.
+Actual observations on one Windows CPU machine, 30 September 2026. The split and ledger paths were **slower** than local forward computation in this experiment. This is a systems result, not evidence of distributed speedup or a model-quality evaluation.
 
 ## Architecture
 
 ```mermaid
 flowchart LR
-    I[Synthetic activation vectors] --> W0[Worker process 0 / transformer block 0]
-    W0 -->|Activations over local IPC| W1[Worker process 1 / transformer block 1]
-    W1 --> O[Numeric output]
-    C[Trusted local coordinator] --> W0
-    C --> W1
-    C -->|Job and ordered hash receipts| R[Solidity InferenceRegistry / local EVM]
-    O --> V[Single-process reference comparison]
+    T[Public authored sentences] --> C[Coordinator / tokenizer]
+    C --> A[Worker 0 / embeddings and layers 0-2]
+    A -->|Binary activations via coordinator| B[Worker 1 / layers 3-5 and pooling]
+    B --> E[Normalized sentence embeddings]
+    C --> L[Local reference / full model]
+    E --> V[Numerical equivalence comparison]
+    L --> V
+    C -->|Creation and two hash receipts| R[Local EVM / InferenceRegistry]
 ```
 
-Transformer blocks execute on workers. Blockchain blocks record transactions. Receipts are submitted after computation; the chain never executes the transformer or stores the full activations. [Architecture and trust boundaries](docs/architecture.md).
+The coordinator creates the job, requests split computation, then records two ordered receipts. The contract verifies signer, order and hash continuity. **It does not verify inference correctness.** A test deliberately accepts a fabricated output hash from an assigned worker.
 
 ## Tech stack
 
-Solidity, Hardhat 3, ethers, Node.js child-process IPC, SHA-256, Mocha/Chai, ESLint and GitHub Actions. The tiny transformer math uses plain JavaScript. A pinned local solc compiler avoids an extra compiler download during builds. A scoped override upgrades solc's `tmp` dependency to patched version 0.2.7; the lockfile records the exact graph.
+PyTorch CPU, Transformers, NumPy, Python multiprocessing, Node.js, Solidity, Hardhat 3, ethers, pytest, Mocha/Chai, ESLint and GitHub Actions. Checkpoint revision: `1110a243fdf4706b3f48f1d95db1a4f5529b4d41`. No remote model code or pickle tensor transport.
 
 ## Quickstart
 
-Use Node.js 24 and npm:
+Use Node 24 and Python 3.10+. From the repository root:
 
 ```sh
+python -m venv .venv
+# Activate .venv for your shell, then:
+python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements-benchmark.txt
 npm ci --ignore-scripts
-npm run lint
-npm test
-npm run demo
+npm run benchmark
 ```
 
-Tests include the original Greeter, Lock and NumberStorage examples. `scripts/deploy.js` is a separate local-only deployment example; the supported inference demo is `scripts/inference-demo.js`. The project does not load `.env` or accept production credentials.
+The first run downloads the public checkpoint into the Hugging Face cache. No API key, wallet or real funds are used. `BENCH_PYTHON` can point to a Python executable if it is not on PATH. `BENCH_REPEATS` defaults to 20 per workload; all observations are saved to `evaluation/embedding-benchmark.json`.
+
+```sh
+python -m pytest tests/test_embedding.py -q
+python -m benchmark.failures
+npm test
+npm run lint
+```
+
+`npm run demo` retains the smaller untrained two-block fixture for a Node-only introduction. It is not the trained-model benchmark.
 
 ## Evaluation
 
-Measured locally on 2026-09-30 with Node 24.18.1:
+Three workload shapes, three warm-up passes per execution path, one ledger warm-up per case, **20 measured repetitions per case**, alternating local-first and split-first order. CPU float32/eager attention, one PyTorch thread per process. Tokenization, download, initialization and deployment are outside the warm timed interval. Full protocol and environment are in the artifact.
 
-| Check | Observed result |
-| --- | --- |
-| Automated tests | 30 passed (original contracts + new registry and pipeline) |
-| npm dependency audit | 0 reported vulnerabilities on 2026-09-30 |
-| Separate worker processes | 2 |
-| Completed ordered receipts | 2/2 |
-| Split versus single-process maximum absolute error | 0 on the fixed input |
-| Stage receipt gas | 42,969 and 42,981 local EVM gas units |
+| Workload | Local p50 ms | Split p50 ms | Tensor codec p50 ms | Ledger calls p50 ms | Split + ledger p50 ms |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| single-short | 10.50 | 12.41 | 0.66 | 4.80 | 17.90 |
+| batch-four | 21.02 | 23.47 | 0.70 | 5.11 | 29.97 |
+| batch-two-long | 66.56 | 72.21 | 0.83 | 4.92 | 78.14 |
 
+Local means the original model's forward pass and normalized pooling. Split includes the two worker computations, tensor transport, hashes and orchestration. Tensor codec is a **subset** of split time. Ledger calls time job creation and two mined receipts. End-to-end is separately measured and also includes the Node/Python bridge; medians are not additive. **Local EVM automining is not distributed consensus or public-chain latency.**
 
-[Recorded local measurements](evaluation/demo.json) include the model-source hash, input hash, process IDs, linked receipts, output hash, gas and elapsed pipeline time. Elapsed time includes process startup and IPC; it is a single illustrative observation, not a throughput benchmark. Gas is measured on the local EVM, not a fiat price or public-chain latency estimate.
-
-Tests check authorized stage ordering, replay rejection, hash continuity, cancellation, expiration, input bounds, causal attention, worker failure/timeout and split/reference equivalence. A deliberate negative-security test proves that the contract accepts an invented output hash from an authorized worker: correctness verification is not implemented.
-
-No language quality, real-model memory saving, distributed speedup, GPU utilization, network resilience or cryptographic inference-proof result is claimed.
+All 60 measured split results matched the local embeddings exactly in the recorded environment; the acceptance tolerance was fixed at 1e-5. Tests also check padding invariance. There are **30 JavaScript/contract tests and 13 Python tests**. [Raw samples](evaluation/embedding-benchmark.json), [fault observations](evaluation/failures.json), and [p95 values and scope](docs/benchmark.md) are published. These are descriptive measurements from one session, not independent-machine trials.
 
 ## Design choices
 
-- **Compute outside the EVM:** a blockchain replicates execution; it does not automatically pool inference capacity. Workers perform model operations while the contract records receipts.
-- **Small inspectable fixture:** two causal-attention blocks make process boundaries and numerical equivalence easy to test without downloading model weights.
-- **Explicit state machine:** jobs name distinct assigned workers, a model commitment and deadline. Only the next assigned signer can advance the receipt chain.
-- **No artificial token economy:** no payment, stake, slashing, fund custody or profitability claims.
-- **Verification gap is tested:** hashes bind statements, not mathematical correctness. The demo's full recomputation is a trusted test oracle and negates compute savings.
-- **Plain terminal experience:** no dashboard. JSON artifacts support inspection and reproducibility.
+- **Measure before claiming a protocol.** The current deliverable is a benchmark, not a production DePIN service.
+- **Use an actual trained encoder.** Its useful output is a sentence embedding for semantic retrieval; no generative LLM capability or new training result is claimed.
+- **Separate sources of overhead.** Persistent workers remove repeated process startup from warm runs; startup is reported separately.
+- **Keep a falsification test.** Mismatched hashes cannot determine a dishonest party. No stake, reward or slashing rule substitutes for an adjudicator.
+- **No simulated proof.** The project has no ZK verifier, enclave attestation or claimed trustless computation.
+- **Retain raw observations.** No outlier removal or favorable-run selection. Failures are explicit and are not retried silently.
 
 ## Limitations and next steps
 
-The coordinator controls scheduling and local signers. Workers communicate through local IPC, not an authenticated network. No trained checkpoint, tokenizer, language-model head, KV cache, peer discovery, payment, fault-tolerant routing or trustless verification exists. Hashes do not protect low-entropy inputs; activations can leak information. Only synthetic/public data belongs in this demo.
+One host and local IPC do not measure WAN transfer, remote administration, real consensus, memory savings or fault recovery. Workers initially load the full checkpoint before retaining their assigned modules; peak initialization memory is not a sharding result. The benchmark has no concurrency sweep and uses three authored workloads, not an independent model-quality dataset. No adaptive scheduler, staking, cryptographic proof or governance system is implemented.
 
-The next substantial milestone is a licensed trained model partitioned across real machines, with output-equivalence tests and measurements of per-worker memory, activation traffic and token latency. A production ledger would need batching and a defensible correctness/availability mechanism. If all workers share one trusted operator, a scheduler and database may be more appropriate than blockchain.
+Next: run the same protocol across two physical machines, add controlled link delays/bandwidth and outage schedules, then compare an ordinary receipt database with a genuine independently operated ledger. Verification experiments must define how correct execution is adjudicated before introducing penalties. The [white paper](docs/whitepaper.md) describes those research gates without presenting them as implemented.
 
-[Petals](https://github.com/bigscience-workshop/petals) demonstrates distributed execution of trained model blocks; it is background research, not an integration or a source of benchmark claims here. [Ethereum's oracle documentation](https://ethereum.org/developers/docs/oracles/) explains the off-chain/on-chain trust boundary. [Interview walkthrough](docs/interview.md).
-
-Original AI-assisted portfolio prototype by Kilian Codaccioni. No employer/client data. See [NOTICE](NOTICE) for licensing of retained educational examples; existing SPDX notices remain authoritative.
+Model attribution: [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), Apache-2.0 according to its model card. Weights are downloaded, not republished. Original portfolio code is AI-assisted work by Kilian Codaccioni. No employer/client materials. See [NOTICE](NOTICE) for retained educational contracts and their SPDX notices.

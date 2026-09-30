@@ -14,3 +14,9 @@ node_modules
 /coverage.json
 
 .env.*
+
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.model-cache/

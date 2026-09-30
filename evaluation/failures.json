@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-09-30T19:26:05.511119+00:00",
+  "scope": "One observation per injected local fault. No availability estimate, automatic recovery or cryptographic verification.",
+  "deadline_ms": 500,
+  "records": [
+    {
+      "scenario": "crash",
+      "detected": true,
+      "detection_ms": 81.19550003902987,
+      "error": "Worker disconnected",
+      "retries": 0
+    },
+    {
+      "scenario": "stall",
+      "detected": true,
+      "detection_ms": 512.3795999679714,
+      "error": "Worker response deadline exceeded",
+      "retries": 0
+    },
+    {
+      "scenario": "invalid_token_id",
+      "detected": true,
+      "detection_ms": 0.6280999514274299,
+      "error": "ValueError: Invalid token IDs",
+      "retries": 0
+    }
+  ]
+}

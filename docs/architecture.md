@@ -1,4 +1,6 @@
-# Architecture and trust boundaries
+# Original fixture architecture and trust boundaries
+
+This page documents the original untrained fixture (`npm run demo`). For the trained MiniLM path (`npm run benchmark`), see [the benchmark protocol](benchmark.md). The proposed network design is in [the white paper](whitepaper.md).
 
 ## What is shared
 

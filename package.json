@@ -1,13 +1,14 @@
 {
-  "name": "blockchain-inference-lab",
-  "version": "0.2.0",
+  "name": "adaptive-inference-network",
+  "version": "0.3.0",
   "private": true,
   "description": "Local EVM receipts for split transformer computation",
   "license": "MIT",
   "scripts": {
     "test": "hardhat test",
     "demo": "hardhat run scripts/inference-demo.js",
-    "lint": "eslint compute scripts/inference-demo.js test/InferenceRegistry.js test/Pipeline.js"
+    "lint": "eslint compute scripts/inference-demo.js scripts/embedding-benchmark.js test/InferenceRegistry.js test/Pipeline.js",
+    "benchmark": "hardhat run scripts/embedding-benchmark.js"
   },
   "devDependencies": {
     "hardhat": "3.18.0",

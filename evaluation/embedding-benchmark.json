@@ -1,0 +1,3614 @@
+{
+  "generated_at": "2026-09-30T19:24:47.995Z",
+  "environment": {
+    "ready": true,
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "workers": [
+      {
+        "ready": true,
+        "pid": 35208,
+        "parameters": 17241984
+      },
+      {
+        "ready": true,
+        "pid": 2816,
+        "parameters": 5323392
+      }
+    ],
+    "startup_ms": 9029.745899955742,
+    "python": "3.10.4",
+    "torch": "2.10.0+cpu",
+    "transformers": "4.57.6",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 2, GenuineIntel",
+    "threads_per_process": 1
+  },
+  "node": "v24.18.1",
+  "scope": "CPU, one host, two spawned processes, local binary IPC, in-process automining EVM; no distributed consensus or WAN benchmark.",
+  "protocol": {
+    "repeats": 20,
+    "warmup_each": 3,
+    "ledger_warmup_each": 1,
+    "alternate_local_split_order": true,
+    "timing": "Tokenization/model initialization/deployment excluded. Ledger creation and two receipts are serialized around the split run. Status checks and the reference are outside e2e timing.",
+    "quantiles": "nearest rank; descriptive samples from one process session, not independent trials",
+    "equivalence_atol": 0.00001,
+    "adaptive_scheduling": false
+  },
+  "workload_sha256": "0xd139dc114ea7dbe5dc42fd115266fbf62f04091efd7d2987dc9369493f5e8185",
+  "model_manifest_hash": "0x6cf57360c0e23750023bc15e5631f1f8c831cf49050188e5f8128b950b560962",
+  "preparations": [
+    {
+      "case": "single-short",
+      "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+      "shape": [
+        1,
+        16
+      ],
+      "tokenization_ms": 0.4227000172249973,
+      "rpc_wall_ms": 0.9415000000008149
+    },
+    {
+      "case": "batch-four",
+      "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+      "shape": [
+        4,
+        16
+      ],
+      "tokenization_ms": 0.5686000222340226,
+      "rpc_wall_ms": 0.977100000000064
+    },
+    {
+      "case": "batch-two-long",
+      "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+      "shape": [
+        2,
+        124
+      ],
+      "tokenization_ms": 1.2147999950684607,
+      "rpc_wall_ms": 1.800600000002305
+    }
+  ],
+  "summaries": [
+    {
+      "case": "single-short",
+      "local_compute_ms": {
+        "n": 20,
+        "p50": 10.496100003365427,
+        "p95": 11.179400025866926,
+        "min": 9.258900012355298,
+        "max": 11.465099989436567,
+        "mean": 10.414020001189783
+      },
+      "split_wall_ms": {
+        "n": 20,
+        "p50": 12.405799992848188,
+        "p95": 13.545099995099008,
+        "min": 11.43810001667589,
+        "max": 14.19970003189519,
+        "mean": 12.603955005761236
+      },
+      "serialization_ms": {
+        "n": 20,
+        "p50": 0.6558000459335744,
+        "p95": 0.8900999673642218,
+        "min": 0.5673999548889697,
+        "max": 0.9444000897929072,
+        "mean": 0.6880800181534141
+      },
+      "ledger_ms": {
+        "n": 20,
+        "p50": 4.79859999999826,
+        "p95": 5.6613000000033935,
+        "min": 4.312900000000809,
+        "max": 6.0591999999996915,
+        "mean": 4.859264999999868
+      },
+      "split_plus_ledger_ms": {
+        "n": 20,
+        "p50": 17.90020000000004,
+        "p95": 19.70180000000255,
+        "min": 16.832899999997608,
+        "max": 19.97030000000086,
+        "mean": 18.21587500000023
+      },
+      "wire_bytes": {
+        "n": 20,
+        "p50": 52377,
+        "p95": 52381,
+        "min": 52372,
+        "max": 52381,
+        "mean": 52377.35
+      },
+      "max_absolute_error": {
+        "n": 20,
+        "p50": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      }
+    },
+    {
+      "case": "batch-four",
+      "local_compute_ms": {
+        "n": 20,
+        "p50": 21.020499989390373,
+        "p95": 22.01090002199635,
+        "min": 19.57360003143549,
+        "max": 22.33070001238957,
+        "mean": 21.124030009377748
+      },
+      "split_wall_ms": {
+        "n": 20,
+        "p50": 23.467599996365607,
+        "p95": 25.789599982090294,
+        "min": 22.426200041081756,
+        "max": 25.91480000410229,
+        "mean": 23.79328500246629
+      },
+      "serialization_ms": {
+        "n": 20,
+        "p50": 0.704399892129004,
+        "p95": 0.9147999226115644,
+        "min": 0.6046001217328012,
+        "max": 1.007900107651949,
+        "mean": 0.7368299848167226
+      },
+      "ledger_ms": {
+        "n": 20,
+        "p50": 5.1106999999974505,
+        "p95": 6.059399999998277,
+        "min": 4.445300000003044,
+        "max": 6.328800000002957,
+        "mean": 5.177310000000034
+      },
+      "split_plus_ledger_ms": {
+        "n": 20,
+        "p50": 29.96809999999823,
+        "p95": 33.2029999999977,
+        "min": 28.604599999998754,
+        "max": 33.72639999999956,
+        "mean": 30.45805999999975
+      },
+      "wire_bytes": {
+        "n": 20,
+        "p50": 205970,
+        "p95": 205974,
+        "min": 205968,
+        "max": 205975,
+        "mean": 205970.95
+      },
+      "max_absolute_error": {
+        "n": 20,
+        "p50": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      }
+    },
+    {
+      "case": "batch-two-long",
+      "local_compute_ms": {
+        "n": 20,
+        "p50": 66.5632999734953,
+        "p95": 70.39660000009462,
+        "min": 64.846099994611,
+        "max": 70.45689999358729,
+        "mean": 66.97066499618813
+      },
+      "split_wall_ms": {
+        "n": 20,
+        "p50": 72.21189996926114,
+        "p95": 74.42090002587065,
+        "min": 68.85520002106205,
+        "max": 76.00639999145642,
+        "mean": 72.45248000253923
+      },
+      "serialization_ms": {
+        "n": 20,
+        "p50": 0.8336000028066337,
+        "p95": 1.1331999558024108,
+        "min": 0.7733001257292926,
+        "max": 1.3090000138618052,
+        "mean": 0.8892750192899257
+      },
+      "ledger_ms": {
+        "n": 20,
+        "p50": 4.924100000003818,
+        "p95": 5.8946000000032654,
+        "min": 4.568099999996775,
+        "max": 5.930900000006659,
+        "mean": 5.030524999999943
+      },
+      "split_plus_ledger_ms": {
+        "n": 20,
+        "p50": 78.1436999999969,
+        "p95": 80.51339999999982,
+        "min": 75.00200000000041,
+        "max": 81.65389999999752,
+        "mean": 78.43618499999994
+      },
+      "wire_bytes": {
+        "n": 20,
+        "p50": 774055,
+        "p95": 774059,
+        "min": 774051,
+        "max": 774059,
+        "mean": 774055.5
+      },
+      "max_absolute_error": {
+        "n": 20,
+        "p50": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      }
+    }
+  ],
+  "observations": [
+    {
+      "case": "single-short",
+      "sample": 0,
+      "local_first": true,
+      "local_compute_ms": 11.179400025866926,
+      "local_rpc_ms": 12.051299999999173,
+      "split_wall_ms": 12.04410003265366,
+      "split_rpc_ms": 12.938100000003033,
+      "serialization_ms": 0.7171001052483916,
+      "wire_bytes": 52378,
+      "stage_compute_ms": [
+        4.8596999840810895,
+        4.827099968679249
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-0",
+          "decode_ms": 0.13050000416114926,
+          "compute_ms": 4.8596999840810895,
+          "encode_ms": 0.05139998393133283,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.10650005424395204,
+          "parent_encode_ms": 0.06290001329034567,
+          "wire_bytes": 25568
+        },
+        {
+          "request_id": "single-short-0",
+          "decode_ms": 0.19669998437166214,
+          "compute_ms": 4.827099968679249,
+          "encode_ms": 0.041300023440271616,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.10980002116411924,
+          "parent_encode_ms": 0.018000020645558834,
+          "wire_bytes": 26810
+        }
+      ],
+      "ledger_ms": 5.283299999999144,
+      "create_ms": 1.9180000000014843,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.0213000000003376,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.3439999999973224,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 18.262299999998504,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 1,
+      "local_first": false,
+      "local_compute_ms": 10.952999989967793,
+      "local_rpc_ms": 11.594900000000052,
+      "split_wall_ms": 12.886799988336861,
+      "split_rpc_ms": 13.62039999999979,
+      "serialization_ms": 0.5673999548889697,
+      "wire_bytes": 52376,
+      "stage_compute_ms": [
+        5.0202999846078455,
+        5.907699989620596
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-1",
+          "decode_ms": 0.1317000132985413,
+          "compute_ms": 5.0202999846078455,
+          "encode_ms": 0.05139998393133283,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.08549995254725218,
+          "parent_encode_ms": 0.06369996117427945,
+          "wire_bytes": 25567
+        },
+        {
+          "request_id": "single-short-1",
+          "decode_ms": 0.10689999908208847,
+          "compute_ms": 5.907699989620596,
+          "encode_ms": 0.04240003181621432,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.06709998706355691,
+          "parent_encode_ms": 0.018700025975704193,
+          "wire_bytes": 26809
+        }
+      ],
+      "ledger_ms": 4.965200000002369,
+      "create_ms": 1.844199999999546,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.85740000000078,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.263600000002043,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 18.600399999999354,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 2,
+      "local_first": true,
+      "local_compute_ms": 10.331699973903596,
+      "local_rpc_ms": 11.180199999998877,
+      "split_wall_ms": 11.847199988551438,
+      "split_rpc_ms": 12.510699999998906,
+      "serialization_ms": 0.6027000490576029,
+      "wire_bytes": 52376,
+      "stage_compute_ms": [
+        4.942600033245981,
+        5.038000002969056
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-2",
+          "decode_ms": 0.11480000102892518,
+          "compute_ms": 4.942600033245981,
+          "encode_ms": 0.04970002919435501,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.08340005297213793,
+          "parent_encode_ms": 0.07479998748749495,
+          "wire_bytes": 25567
+        },
+        {
+          "request_id": "single-short-2",
+          "decode_ms": 0.13649999164044857,
+          "compute_ms": 5.038000002969056,
+          "encode_ms": 0.05470000905916095,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.06989995017647743,
+          "parent_encode_ms": 0.018900027498602867,
+          "wire_bytes": 26809
+        }
+      ],
+      "ledger_ms": 6.0591999999996915,
+      "create_ms": 1.8195999999988999,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.70679999999993,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.5328000000008615,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 18.587800000001153,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 3,
+      "local_first": false,
+      "local_compute_ms": 10.953699995297939,
+      "local_rpc_ms": 11.557300000000396,
+      "split_wall_ms": 12.448000023141503,
+      "split_rpc_ms": 13.385399999999208,
+      "serialization_ms": 0.5718000466004014,
+      "wire_bytes": 52377,
+      "stage_compute_ms": [
+        5.093100015074015,
+        5.626800004392862
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-3",
+          "decode_ms": 0.11530000483617187,
+          "compute_ms": 5.093100015074015,
+          "encode_ms": 0.05400000372901559,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.08159998105838895,
+          "parent_encode_ms": 0.062000006437301636,
+          "wire_bytes": 25567
+        },
+        {
+          "request_id": "single-short-3",
+          "decode_ms": 0.13150001177564263,
+          "compute_ms": 5.626800004392862,
+          "encode_ms": 0.042899977415800095,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.0657000346109271,
+          "parent_encode_ms": 0.01880002673715353,
+          "wire_bytes": 26810
+        }
+      ],
+      "ledger_ms": 4.497299999995448,
+      "create_ms": 1.6585999999988417,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.6565999999984342,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1820999999981723,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 17.90020000000004,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 4,
+      "local_first": true,
+      "local_compute_ms": 9.258900012355298,
+      "local_rpc_ms": 9.973500000000058,
+      "split_wall_ms": 12.279800022952259,
+      "split_rpc_ms": 13.006499999999505,
+      "serialization_ms": 0.775999971665442,
+      "wire_bytes": 52372,
+      "stage_compute_ms": [
+        5.2181999781169,
+        5.07750001270324
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-4",
+          "decode_ms": 0.3198999911546707,
+          "compute_ms": 5.2181999781169,
+          "encode_ms": 0.05339999916031957,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.09440002031624317,
+          "parent_encode_ms": 0.0667999847792089,
+          "wire_bytes": 25564
+        },
+        {
+          "request_id": "single-short-4",
+          "decode_ms": 0.1142999972216785,
+          "compute_ms": 5.07750001270324,
+          "encode_ms": 0.041300023440271616,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.06689998554065824,
+          "parent_encode_ms": 0.01899997005239129,
+          "wire_bytes": 26808
+        }
+      ],
+      "ledger_ms": 4.387399999999616,
+      "create_ms": 1.5016999999970722,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.730200000001787,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1555000000007567,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 17.41229999999996,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 5,
+      "local_first": false,
+      "local_compute_ms": 9.55630000680685,
+      "local_rpc_ms": 10.165799999998853,
+      "split_wall_ms": 11.84699998702854,
+      "split_rpc_ms": 12.656600000002072,
+      "serialization_ms": 0.607999914791435,
+      "wire_bytes": 52377,
+      "stage_compute_ms": [
+        4.975999996531755,
+        4.873300029430538
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-5",
+          "decode_ms": 0.11379999341443181,
+          "compute_ms": 4.975999996531755,
+          "encode_ms": 0.05080003757029772,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.12019998393952847,
+          "parent_encode_ms": 0.058699981309473515,
+          "wire_bytes": 25567
+        },
+        {
+          "request_id": "single-short-5",
+          "decode_ms": 0.13120000949129462,
+          "compute_ms": 4.873300029430538,
+          "encode_ms": 0.039899954572319984,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.06269995355978608,
+          "parent_encode_ms": 0.030700000934302807,
+          "wire_bytes": 26810
+        }
+      ],
+      "ledger_ms": 5.084199999997509,
+      "create_ms": 1.6168999999972584,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.9838999999992666,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.4834000000009837,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 17.792199999999866,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 6,
+      "local_first": true,
+      "local_compute_ms": 10.491900029592216,
+      "local_rpc_ms": 11.107299999999668,
+      "split_wall_ms": 12.411899981088936,
+      "split_rpc_ms": 13.088999999999942,
+      "serialization_ms": 0.6008000345900655,
+      "wire_bytes": 52374,
+      "stage_compute_ms": [
+        5.745699978433549,
+        4.948900023009628
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-6",
+          "decode_ms": 0.1113000325858593,
+          "compute_ms": 5.745699978433549,
+          "encode_ms": 0.05339999916031957,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.08809997234493494,
+          "parent_encode_ms": 0.07440004264935851,
+          "wire_bytes": 25566
+        },
+        {
+          "request_id": "single-short-6",
+          "decode_ms": 0.1542000100016594,
+          "compute_ms": 4.948900023009628,
+          "encode_ms": 0.03960001049563289,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.06120000034570694,
+          "parent_encode_ms": 0.018599967006593943,
+          "wire_bytes": 26808
+        }
+      ],
+      "ledger_ms": 4.595600000000559,
+      "create_ms": 1.7882000000026892,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.6225999999987835,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1847999999990861,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 17.718300000000454,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 7,
+      "local_first": false,
+      "local_compute_ms": 9.711000020615757,
+      "local_rpc_ms": 10.36239999999816,
+      "split_wall_ms": 13.545099995099008,
+      "split_rpc_ms": 14.335300000002462,
+      "serialization_ms": 0.8105000015348196,
+      "wire_bytes": 52375,
+      "stage_compute_ms": [
+        6.454500020481646,
+        5.040800024289638
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-7",
+          "decode_ms": 0.3133999998681247,
+          "compute_ms": 6.454500020481646,
+          "encode_ms": 0.06669998401775956,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.08919998072087765,
+          "parent_encode_ms": 0.05929998587816954,
+          "wire_bytes": 25566
+        },
+        {
+          "request_id": "single-short-7",
+          "decode_ms": 0.13479997869580984,
+          "compute_ms": 5.040800024289638,
+          "encode_ms": 0.04250003257766366,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.08590001380071044,
+          "parent_encode_ms": 0.018700025975704193,
+          "wire_bytes": 26809
+        }
+      ],
+      "ledger_ms": 5.239099999998871,
+      "create_ms": 1.6142999999974563,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.9778000000005704,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.647000000000844,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 19.604599999998754,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 8,
+      "local_first": true,
+      "local_compute_ms": 10.496100003365427,
+      "local_rpc_ms": 11.263499999997293,
+      "split_wall_ms": 12.406699999701232,
+      "split_rpc_ms": 13.035499999998137,
+      "serialization_ms": 0.6847000913694501,
+      "wire_bytes": 52376,
+      "stage_compute_ms": [
+        5.128899996634573,
+        5.433699989225715
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-8",
+          "decode_ms": 0.12799998512491584,
+          "compute_ms": 5.128899996634573,
+          "encode_ms": 0.05560001591220498,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.11780002387240529,
+          "parent_encode_ms": 0.05859998054802418,
+          "wire_bytes": 25567
+        },
+        {
+          "request_id": "single-short-8",
+          "decode_ms": 0.14350004494190216,
+          "compute_ms": 5.433699989225715,
+          "encode_ms": 0.04199997056275606,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.06680004298686981,
+          "parent_encode_ms": 0.07240002742037177,
+          "wire_bytes": 26809
+        }
+      ],
+      "ledger_ms": 4.568999999999505,
+      "create_ms": 1.8597000000008848,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.6150999999990745,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.094199999999546,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 17.613600000000588,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 9,
+      "local_first": false,
+      "local_compute_ms": 10.90320001821965,
+      "local_rpc_ms": 11.5099999999984,
+      "split_wall_ms": 13.506099989172071,
+      "split_rpc_ms": 14.214700000000448,
+      "serialization_ms": 0.6756000220775604,
+      "wire_bytes": 52377,
+      "stage_compute_ms": [
+        6.6704999771900475,
+        5.009700020309538
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-9",
+          "decode_ms": 0.12130005052313209,
+          "compute_ms": 6.6704999771900475,
+          "encode_ms": 0.08359999628737569,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.12889999197795987,
+          "parent_encode_ms": 0.0632999581284821,
+          "wire_bytes": 25568
+        },
+        {
+          "request_id": "single-short-9",
+          "decode_ms": 0.12939999578520656,
+          "compute_ms": 5.009700020309538,
+          "encode_ms": 0.04090002039447427,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.07660000119358301,
+          "parent_encode_ms": 0.03160000778734684,
+          "wire_bytes": 26809
+        }
+      ],
+      "ledger_ms": 4.805200000002515,
+      "create_ms": 1.730200000001787,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7222000000001572,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.3528000000005704,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 19.02770000000237,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 10,
+      "local_first": true,
+      "local_compute_ms": 10.77140000415966,
+      "local_rpc_ms": 11.393000000000029,
+      "split_wall_ms": 13.028900022618473,
+      "split_rpc_ms": 13.77310000000216,
+      "serialization_ms": 0.7103999960236251,
+      "wire_bytes": 52380,
+      "stage_compute_ms": [
+        5.106199998408556,
+        5.845499981660396
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-10",
+          "decode_ms": 0.11800002539530396,
+          "compute_ms": 5.106199998408556,
+          "encode_ms": 0.05319999763742089,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.08809997234493494,
+          "parent_encode_ms": 0.07299997378140688,
+          "wire_bytes": 25569
+        },
+        {
+          "request_id": "single-short-10",
+          "decode_ms": 0.21540001034736633,
+          "compute_ms": 5.845499981660396,
+          "encode_ms": 0.04120002267882228,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.10210002074018121,
+          "parent_encode_ms": 0.01939997309818864,
+          "wire_bytes": 26811
+        }
+      ],
+      "ledger_ms": 4.642899999998917,
+      "create_ms": 1.746899999998277,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.6031000000002678,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.2929000000003725,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 18.42320000000109,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 11,
+      "local_first": false,
+      "local_compute_ms": 10.945599991828203,
+      "local_rpc_ms": 11.629499999999098,
+      "split_wall_ms": 12.316400010604411,
+      "split_rpc_ms": 13.017500000001746,
+      "serialization_ms": 0.7230000337585807,
+      "wire_bytes": 52379,
+      "stage_compute_ms": [
+        5.632399988826364,
+        4.781199968419969
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-11",
+          "decode_ms": 0.13189995661377907,
+          "compute_ms": 5.632399988826364,
+          "encode_ms": 0.05959998816251755,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.08450000314041972,
+          "parent_encode_ms": 0.06049999501556158,
+          "wire_bytes": 25569
+        },
+        {
+          "request_id": "single-short-11",
+          "decode_ms": 0.2660000463947654,
+          "compute_ms": 4.781199968419969,
+          "encode_ms": 0.04150002496317029,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.06130000110715628,
+          "parent_encode_ms": 0.017700018361210823,
+          "wire_bytes": 26810
+        }
+      ],
+      "ledger_ms": 4.833700000002864,
+      "create_ms": 1.5756000000001222,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.752200000002631,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.5059000000001106,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 17.85859999999957,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 12,
+      "local_first": true,
+      "local_compute_ms": 10.690400027669966,
+      "local_rpc_ms": 11.512400000003254,
+      "split_wall_ms": 12.214499991387129,
+      "split_rpc_ms": 13.018299999999726,
+      "serialization_ms": 0.6535999709740281,
+      "wire_bytes": 52379,
+      "stage_compute_ms": [
+        4.967399989254773,
+        5.187300033867359
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-12",
+          "decode_ms": 0.1294999965466559,
+          "compute_ms": 4.967399989254773,
+          "encode_ms": 0.05259999306872487,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.09159999899566174,
+          "parent_encode_ms": 0.06250001024454832,
+          "wire_bytes": 25568
+        },
+        {
+          "request_id": "single-short-12",
+          "decode_ms": 0.1230000052601099,
+          "compute_ms": 5.187300033867359,
+          "encode_ms": 0.052099989261478186,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.12400001287460327,
+          "parent_encode_ms": 0.01829996472224593,
+          "wire_bytes": 26811
+        }
+      ],
+      "ledger_ms": 4.312900000000809,
+      "create_ms": 1.530399999999645,
+      "create_gas": "183244",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.6057000000000698,
+          "gas": "42969"
+        },
+        {
+          "wall_ms": 1.1768000000010943,
+          "gas": "42981"
+        }
+      ],
+      "split_plus_ledger_ms": 17.338299999999435,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 13,
+      "local_first": false,
+      "local_compute_ms": 10.623299982398748,
+      "local_rpc_ms": 11.258999999998196,
+      "split_wall_ms": 12.330600002314895,
+      "split_rpc_ms": 12.930799999998271,
+      "serialization_ms": 0.5843999679200351,
+      "wire_bytes": 52381,
+      "stage_compute_ms": [
+        5.245700012892485,
+        5.386899982113391
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-13",
+          "decode_ms": 0.11490000179037452,
+          "compute_ms": 5.245700012892485,
+          "encode_ms": 0.053800002206116915,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.08410000009462237,
+          "parent_encode_ms": 0.05909998435527086,
+          "wire_bytes": 25570
+        },
+        {
+          "request_id": "single-short-13",
+          "decode_ms": 0.14100002590566874,
+          "compute_ms": 5.386899982113391,
+          "encode_ms": 0.05169998621568084,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.062000006437301636,
+          "parent_encode_ms": 0.017799960914999247,
+          "wire_bytes": 26811
+        }
+      ],
+      "ledger_ms": 4.562000000001717,
+      "create_ms": 1.2407000000021071,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.9534999999996217,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.3677999999999884,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 17.501100000001315,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 14,
+      "local_first": true,
+      "local_compute_ms": 9.727599972393364,
+      "local_rpc_ms": 10.392400000000634,
+      "split_wall_ms": 11.43810001667589,
+      "split_rpc_ms": 12.085599999998522,
+      "serialization_ms": 0.6430999492295086,
+      "wire_bytes": 52375,
+      "stage_compute_ms": [
+        4.836399981286377,
+        4.84780000988394
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-14",
+          "decode_ms": 0.1642999704927206,
+          "compute_ms": 4.836399981286377,
+          "encode_ms": 0.049400026910007,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.0838999985717237,
+          "parent_encode_ms": 0.06809999467805028,
+          "wire_bytes": 25566
+        },
+        {
+          "request_id": "single-short-14",
+          "decode_ms": 0.12280000373721123,
+          "compute_ms": 4.84780000988394,
+          "encode_ms": 0.0412999652326107,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.09519996820017695,
+          "parent_encode_ms": 0.01810002140700817,
+          "wire_bytes": 26809
+        }
+      ],
+      "ledger_ms": 4.738699999994424,
+      "create_ms": 2.0872999999992317,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.5376999999971304,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1136999999980617,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 16.832899999997608,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 15,
+      "local_first": false,
+      "local_compute_ms": 10.507099970709532,
+      "local_rpc_ms": 11.1320999999989,
+      "split_wall_ms": 12.405799992848188,
+      "split_rpc_ms": 13.223399999998946,
+      "serialization_ms": 0.5818001227453351,
+      "wire_bytes": 52381,
+      "stage_compute_ms": [
+        5.964699957985431,
+        4.765400022733957
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-15",
+          "decode_ms": 0.12159999459981918,
+          "compute_ms": 5.964699957985431,
+          "encode_ms": 0.057500030379742384,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.09240000508725643,
+          "parent_encode_ms": 0.06120000034570694,
+          "wire_bytes": 25570
+        },
+        {
+          "request_id": "single-short-15",
+          "decode_ms": 0.13270002091303468,
+          "compute_ms": 4.765400022733957,
+          "encode_ms": 0.03960001049563289,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.0570000265724957,
+          "parent_encode_ms": 0.0198000343516469,
+          "wire_bytes": 26811
+        }
+      ],
+      "ledger_ms": 4.842100000001665,
+      "create_ms": 1.4904999999998836,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.042300000000978,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.3093000000008033,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 18.075300000000425,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 16,
+      "local_first": true,
+      "local_compute_ms": 9.52369999140501,
+      "local_rpc_ms": 10.13300000000163,
+      "split_wall_ms": 12.264200020581484,
+      "split_rpc_ms": 13,
+      "serialization_ms": 0.6558000459335744,
+      "wire_bytes": 52380,
+      "stage_compute_ms": [
+        5.7200000155717134,
+        4.721499979496002
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-16",
+          "decode_ms": 0.11200003791600466,
+          "compute_ms": 5.7200000155717134,
+          "encode_ms": 0.0543000060133636,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.08479994721710682,
+          "parent_encode_ms": 0.04810001701116562,
+          "wire_bytes": 25569
+        },
+        {
+          "request_id": "single-short-16",
+          "decode_ms": 0.2133999951183796,
+          "compute_ms": 4.721499979496002,
+          "encode_ms": 0.039700011257082224,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.08530000923201442,
+          "parent_encode_ms": 0.018200022168457508,
+          "wire_bytes": 26811
+        }
+      ],
+      "ledger_ms": 4.79859999999826,
+      "create_ms": 1.6421000000009371,
+      "create_gas": "183244",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.77639999999883,
+          "gas": "42969"
+        },
+        {
+          "wall_ms": 1.3800999999984924,
+          "gas": "42981"
+        }
+      ],
+      "split_plus_ledger_ms": 17.807300000000396,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 17,
+      "local_first": false,
+      "local_compute_ms": 10.04979998106137,
+      "local_rpc_ms": 10.6903999999995,
+      "split_wall_ms": 13.24990001739934,
+      "split_rpc_ms": 13.93289999999979,
+      "serialization_ms": 0.7604000275023282,
+      "wire_bytes": 52379,
+      "stage_compute_ms": [
+        5.783899978268892,
+        5.284000013489276
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-17",
+          "decode_ms": 0.1879000337794423,
+          "compute_ms": 5.783899978268892,
+          "encode_ms": 0.05339999916031957,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.08259998867288232,
+          "parent_encode_ms": 0.059399986639618874,
+          "wire_bytes": 25568
+        },
+        {
+          "request_id": "single-short-17",
+          "decode_ms": 0.25340000865980983,
+          "compute_ms": 5.284000013489276,
+          "encode_ms": 0.04139996599406004,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.06410002242773771,
+          "parent_encode_ms": 0.018200022168457508,
+          "wire_bytes": 26811
+        }
+      ],
+      "ledger_ms": 4.349099999999453,
+      "create_ms": 1.5653000000020256,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.493799999996554,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.2900000000008731,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 18.289300000000367,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 18,
+      "local_first": true,
+      "local_compute_ms": 11.465099989436567,
+      "local_rpc_ms": 12.385699999998906,
+      "split_wall_ms": 14.19970003189519,
+      "split_rpc_ms": 15.004000000000815,
+      "serialization_ms": 0.8900999673642218,
+      "wire_bytes": 52377,
+      "stage_compute_ms": [
+        4.856499959714711,
+        7.08049995591864
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-18",
+          "decode_ms": 0.11819996871054173,
+          "compute_ms": 4.856499959714711,
+          "encode_ms": 0.0686999992467463,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.0914999982342124,
+          "parent_encode_ms": 0.057399971410632133,
+          "wire_bytes": 25568
+        },
+        {
+          "request_id": "single-short-18",
+          "decode_ms": 0.37999998312443495,
+          "compute_ms": 7.08049995591864,
+          "encode_ms": 0.0543000060133636,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.09630003478378057,
+          "parent_encode_ms": 0.02370000584051013,
+          "wire_bytes": 26809
+        }
+      ],
+      "ledger_ms": 4.95850000000064,
+      "create_ms": 1.6336000000010245,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.1468999999997322,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1779999999998836,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 19.97030000000086,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "single-short",
+      "sample": 19,
+      "local_first": false,
+      "local_compute_ms": 10.141200036741793,
+      "local_rpc_ms": 10.840499999998428,
+      "split_wall_ms": 13.408300001174212,
+      "split_rpc_ms": 14.02980000000025,
+      "serialization_ms": 0.9444000897929072,
+      "wire_bytes": 52378,
+      "stage_compute_ms": [
+        6.303900037892163,
+        4.790899984072894
+      ],
+      "stages": [
+        {
+          "request_id": "single-short-19",
+          "decode_ms": 0.396600051317364,
+          "compute_ms": 6.303900037892163,
+          "encode_ms": 0.05690002581104636,
+          "input_hash": "0xfaf62c0b4615bc65b2950c78643d4396f87aa2462d26624382bc38f643e2859d",
+          "output_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "parent_decode_ms": 0.1010000123642385,
+          "parent_encode_ms": 0.05759997293353081,
+          "wire_bytes": 25567
+        },
+        {
+          "request_id": "single-short-19",
+          "decode_ms": 0.1838000025600195,
+          "compute_ms": 4.790899984072894,
+          "encode_ms": 0.040000013541430235,
+          "input_hash": "0xc55ae473fe39919824ce886b19b078f1269a5ef97f1d1030ffefdff60a985946",
+          "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa",
+          "parent_decode_ms": 0.09039998985826969,
+          "parent_encode_ms": 0.01810002140700817,
+          "wire_bytes": 26811
+        }
+      ],
+      "ledger_ms": 5.6613000000033935,
+      "create_ms": 1.813799999999901,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.909800000001269,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.9377000000022235,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 19.70180000000255,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x174b4b862bcc40f4d7a1fc7ec71660cc7729c058fa680e18fbea5f6e862f42fa"
+    },
+    {
+      "case": "batch-four",
+      "sample": 0,
+      "local_first": true,
+      "local_compute_ms": 20.09520004503429,
+      "local_rpc_ms": 21.508200000000215,
+      "split_wall_ms": 23.008599993772805,
+      "split_rpc_ms": 24.332299999998213,
+      "serialization_ms": 0.6920999148860574,
+      "wire_bytes": 205969,
+      "stage_compute_ms": [
+        10.07060002302751,
+        10.634400008711964
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-0",
+          "decode_ms": 0.19940000493079424,
+          "compute_ms": 10.07060002302751,
+          "encode_ms": 0.06249995203688741,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.08909997995942831,
+          "parent_encode_ms": 0.06639998173341155,
+          "wire_bytes": 100443
+        },
+        {
+          "request_id": "batch-four-0",
+          "decode_ms": 0.13130001025274396,
+          "compute_ms": 10.634400008711964,
+          "encode_ms": 0.04640000406652689,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07119996007531881,
+          "parent_encode_ms": 0.025800021830946207,
+          "wire_bytes": 105526
+        }
+      ],
+      "ledger_ms": 4.445300000003044,
+      "create_ms": 1.7243999999991502,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.6343000000015309,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.0866000000023632,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 28.784499999997934,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 1,
+      "local_first": false,
+      "local_compute_ms": 21.903300017584115,
+      "local_rpc_ms": 23.919999999998254,
+      "split_wall_ms": 25.789599982090294,
+      "split_rpc_ms": 28.05710000000181,
+      "serialization_ms": 0.7551000453531742,
+      "wire_bytes": 205969,
+      "stage_compute_ms": [
+        11.498000007122755,
+        11.881700018420815
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-1",
+          "decode_ms": 0.12829998740926385,
+          "compute_ms": 11.498000007122755,
+          "encode_ms": 0.0828000484034419,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.15169999096542597,
+          "parent_encode_ms": 0.06359996041283011,
+          "wire_bytes": 100443
+        },
+        {
+          "request_id": "batch-four-1",
+          "decode_ms": 0.13499998021870852,
+          "compute_ms": 11.881700018420815,
+          "encode_ms": 0.05860003875568509,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.09640003554522991,
+          "parent_encode_ms": 0.038700003642588854,
+          "wire_bytes": 105526
+        }
+      ],
+      "ledger_ms": 5.660599999999249,
+      "create_ms": 2.0182999999997264,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.2890000000006694,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.3532999999988533,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 33.72639999999956,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 2,
+      "local_first": true,
+      "local_compute_ms": 20.983100053854287,
+      "local_rpc_ms": 23.162000000000262,
+      "split_wall_ms": 23.99760001571849,
+      "split_rpc_ms": 25.38090000000011,
+      "serialization_ms": 0.7402998744510114,
+      "wire_bytes": 205968,
+      "stage_compute_ms": [
+        10.417499986942858,
+        11.260900006163865
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-2",
+          "decode_ms": 0.1218999968841672,
+          "compute_ms": 10.417499986942858,
+          "encode_ms": 0.10389997623860836,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.14659995213150978,
+          "parent_encode_ms": 0.07830001413822174,
+          "wire_bytes": 100443
+        },
+        {
+          "request_id": "batch-four-2",
+          "decode_ms": 0.1309000072069466,
+          "compute_ms": 11.260900006163865,
+          "encode_ms": 0.04829996032640338,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07559999357908964,
+          "parent_encode_ms": 0.03479997394606471,
+          "wire_bytes": 105525
+        }
+      ],
+      "ledger_ms": 5.660700000000361,
+      "create_ms": 1.9341000000022177,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.694100000000617,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 2.032499999997526,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 31.05159999999887,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 3,
+      "local_first": false,
+      "local_compute_ms": 21.661599981598556,
+      "local_rpc_ms": 22.91599999999744,
+      "split_wall_ms": 25.91480000410229,
+      "split_rpc_ms": 28.023300000000745,
+      "serialization_ms": 0.704399892129004,
+      "wire_bytes": 205968,
+      "stage_compute_ms": [
+        12.461300007998943,
+        11.37720001861453
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-3",
+          "decode_ms": 0.16439997125416994,
+          "compute_ms": 12.461300007998943,
+          "encode_ms": 0.0811999780125916,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.09970000246539712,
+          "parent_encode_ms": 0.08669996168464422,
+          "wire_bytes": 100443
+        },
+        {
+          "request_id": "batch-four-3",
+          "decode_ms": 0.1230000052601099,
+          "compute_ms": 11.37720001861453,
+          "encode_ms": 0.046600005589425564,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07529999129474163,
+          "parent_encode_ms": 0.027499976567924023,
+          "wire_bytes": 105525
+        }
+      ],
+      "ledger_ms": 5.169200000000274,
+      "create_ms": 1.8788000000022294,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.831900000001042,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.4584999999970023,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 33.2029999999977,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 4,
+      "local_first": true,
+      "local_compute_ms": 21.13639999879524,
+      "local_rpc_ms": 22.53689999999915,
+      "split_wall_ms": 24.51739995740354,
+      "split_rpc_ms": 25.884000000001834,
+      "serialization_ms": 0.7650000043213367,
+      "wire_bytes": 205970,
+      "stage_compute_ms": [
+        10.973099968396127,
+        11.185400013346225
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-4",
+          "decode_ms": 0.1957999775186181,
+          "compute_ms": 10.973099968396127,
+          "encode_ms": 0.08430000161752105,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.11119997361674905,
+          "parent_encode_ms": 0.07260002894327044,
+          "wire_bytes": 100443
+        },
+        {
+          "request_id": "batch-four-4",
+          "decode_ms": 0.14110002666711807,
+          "compute_ms": 11.185400013346225,
+          "encode_ms": 0.044199987314641476,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.09030004730448127,
+          "parent_encode_ms": 0.025499961338937283,
+          "wire_bytes": 105527
+        }
+      ],
+      "ledger_ms": 6.059399999998277,
+      "create_ms": 2.6961000000010245,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.157100000000355,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.2061999999968975,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 31.953700000001845,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 5,
+      "local_first": false,
+      "local_compute_ms": 21.326000045519322,
+      "local_rpc_ms": 23.005300000000716,
+      "split_wall_ms": 24.322699988260865,
+      "split_rpc_ms": 25.605100000000675,
+      "serialization_ms": 0.7102999952621758,
+      "wire_bytes": 205968,
+      "stage_compute_ms": [
+        11.183299997355789,
+        11.09720004023984
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-5",
+          "decode_ms": 0.13990001752972603,
+          "compute_ms": 11.183299997355789,
+          "encode_ms": 0.0675999908708036,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.1382000045850873,
+          "parent_encode_ms": 0.06420002318918705,
+          "wire_bytes": 100443
+        },
+        {
+          "request_id": "batch-four-5",
+          "decode_ms": 0.14979997649788857,
+          "compute_ms": 11.09720004023984,
+          "encode_ms": 0.04529999569058418,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07000000914558768,
+          "parent_encode_ms": 0.035299977753311396,
+          "wire_bytes": 105525
+        }
+      ],
+      "ledger_ms": 6.328800000002957,
+      "create_ms": 1.9809000000022934,
+      "create_gas": "183244",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.350299999998242,
+          "gas": "42969"
+        },
+        {
+          "wall_ms": 1.9976000000024214,
+          "gas": "42981"
+        }
+      ],
+      "split_plus_ledger_ms": 31.942800000000716,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 6,
+      "local_first": true,
+      "local_compute_ms": 22.01090002199635,
+      "local_rpc_ms": 23.42659999999887,
+      "split_wall_ms": 24.617699964437634,
+      "split_rpc_ms": 25.96010000000024,
+      "serialization_ms": 1.007900107651949,
+      "wire_bytes": 205969,
+      "stage_compute_ms": [
+        10.263899981509894,
+        11.522200016770512
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-6",
+          "decode_ms": 0.12640003114938736,
+          "compute_ms": 10.263899981509894,
+          "encode_ms": 0.06430002395063639,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.31759997364133596,
+          "parent_encode_ms": 0.05860003875568509,
+          "wire_bytes": 100444
+        },
+        {
+          "request_id": "batch-four-6",
+          "decode_ms": 0.2327000256627798,
+          "compute_ms": 11.522200016770512,
+          "encode_ms": 0.04529999569058418,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07299997378140688,
+          "parent_encode_ms": 0.09000004502013326,
+          "wire_bytes": 105525
+        }
+      ],
+      "ledger_ms": 5.419700000002194,
+      "create_ms": 1.5253999999986263,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.006100000002334,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.888200000001234,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 31.388699999999517,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 7,
+      "local_first": false,
+      "local_compute_ms": 20.133300044108182,
+      "local_rpc_ms": 21.683799999998882,
+      "split_wall_ms": 23.339000006671995,
+      "split_rpc_ms": 24.903300000001764,
+      "serialization_ms": 0.8207000209949911,
+      "wire_bytes": 205970,
+      "stage_compute_ms": [
+        10.21709997439757,
+        10.919499967712909
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-7",
+          "decode_ms": 0.17259997548535466,
+          "compute_ms": 10.21709997439757,
+          "encode_ms": 0.10990002192556858,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.10350003140047193,
+          "parent_encode_ms": 0.16769999638199806,
+          "wire_bytes": 100443
+        },
+        {
+          "request_id": "batch-four-7",
+          "decode_ms": 0.12369995238259435,
+          "compute_ms": 10.919499967712909,
+          "encode_ms": 0.044199987314641476,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07320003351196647,
+          "parent_encode_ms": 0.025900022592395544,
+          "wire_bytes": 105527
+        }
+      ],
+      "ledger_ms": 5.276799999999639,
+      "create_ms": 1.926499999997759,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.0311000000001513,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.3192000000017288,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 30.19390000000203,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 8,
+      "local_first": true,
+      "local_compute_ms": 21.94120001513511,
+      "local_rpc_ms": 23.28570000000036,
+      "split_wall_ms": 22.824500047136098,
+      "split_rpc_ms": 24.105399999996735,
+      "serialization_ms": 0.7925000390969217,
+      "wire_bytes": 205968,
+      "stage_compute_ms": [
+        9.792299999389797,
+        10.709199996199459
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-8",
+          "decode_ms": 0.11530000483617187,
+          "compute_ms": 9.792299999389797,
+          "encode_ms": 0.06589997792616487,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.2432999899610877,
+          "parent_encode_ms": 0.05670002428814769,
+          "wire_bytes": 100443
+        },
+        {
+          "request_id": "batch-four-8",
+          "decode_ms": 0.15199999324977398,
+          "compute_ms": 10.709199996199459,
+          "encode_ms": 0.0439999857917428,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07260002894327044,
+          "parent_encode_ms": 0.042700034100562334,
+          "wire_bytes": 105525
+        }
+      ],
+      "ledger_ms": 4.491500000000087,
+      "create_ms": 1.8382000000019616,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.5353999999970256,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1179000000011001,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 28.604599999998754,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 9,
+      "local_first": false,
+      "local_compute_ms": 21.580300002824515,
+      "local_rpc_ms": 23.06999999999971,
+      "split_wall_ms": 23.467599996365607,
+      "split_rpc_ms": 24.66570000000138,
+      "serialization_ms": 0.61629997799173,
+      "wire_bytes": 205968,
+      "stage_compute_ms": [
+        10.127999994438142,
+        11.348299973178655
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-9",
+          "decode_ms": 0.1218999968841672,
+          "compute_ms": 10.127999994438142,
+          "encode_ms": 0.06419996498152614,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.09410001803189516,
+          "parent_encode_ms": 0.063000014051795,
+          "wire_bytes": 100443
+        },
+        {
+          "request_id": "batch-four-9",
+          "decode_ms": 0.1246000174432993,
+          "compute_ms": 11.348299973178655,
+          "encode_ms": 0.04569999873638153,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07709994679316878,
+          "parent_encode_ms": 0.02570002106949687,
+          "wire_bytes": 105525
+        }
+      ],
+      "ledger_ms": 4.447799999998097,
+      "create_ms": 1.742099999999482,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.5535999999992782,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1520999999993364,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 29.133599999997386,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 10,
+      "local_first": true,
+      "local_compute_ms": 20.5514999688603,
+      "local_rpc_ms": 21.892400000000634,
+      "split_wall_ms": 23.97539996309206,
+      "split_rpc_ms": 25.31629999999859,
+      "serialization_ms": 0.6892998935654759,
+      "wire_bytes": 205974,
+      "stage_compute_ms": [
+        11.360200005583465,
+        10.228400002233684
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-10",
+          "decode_ms": 0.12040004367008805,
+          "compute_ms": 11.360200005583465,
+          "encode_ms": 0.06849999772384763,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.09709998266771436,
+          "parent_encode_ms": 0.05530001362785697,
+          "wire_bytes": 100446
+        },
+        {
+          "request_id": "batch-four-10",
+          "decode_ms": 0.13919995399191976,
+          "compute_ms": 10.228400002233684,
+          "encode_ms": 0.06719998782500625,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.11619995348155499,
+          "parent_encode_ms": 0.025399960577487946,
+          "wire_bytes": 105528
+        }
+      ],
+      "ledger_ms": 4.617099999999482,
+      "create_ms": 1.7203000000008615,
+      "create_gas": "183244",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7463999999999942,
+          "gas": "42969"
+        },
+        {
+          "wall_ms": 1.1503999999986263,
+          "gas": "42981"
+        }
+      ],
+      "split_plus_ledger_ms": 29.940300000002026,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 11,
+      "local_first": false,
+      "local_compute_ms": 20.629100035876036,
+      "local_rpc_ms": 21.929400000000896,
+      "split_wall_ms": 22.70979998866096,
+      "split_rpc_ms": 23.977599999998347,
+      "serialization_ms": 0.6046001217328012,
+      "wire_bytes": 205971,
+      "stage_compute_ms": [
+        10.049499978777021,
+        10.69419999839738
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-11",
+          "decode_ms": 0.118900032248348,
+          "compute_ms": 10.049499978777021,
+          "encode_ms": 0.06400002166628838,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.09109999518841505,
+          "parent_encode_ms": 0.06350001785904169,
+          "wire_bytes": 100444
+        },
+        {
+          "request_id": "batch-four-11",
+          "decode_ms": 0.12310000602155924,
+          "compute_ms": 10.69419999839738,
+          "encode_ms": 0.04770001396536827,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07200002437457442,
+          "parent_encode_ms": 0.024300010409206152,
+          "wire_bytes": 105527
+        }
+      ],
+      "ledger_ms": 4.9386000000013155,
+      "create_ms": 2.1489000000001397,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.596799999999348,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1929000000018277,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 28.924399999999878,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 12,
+      "local_first": true,
+      "local_compute_ms": 20.47719998518005,
+      "local_rpc_ms": 21.855400000000373,
+      "split_wall_ms": 23.964599997270852,
+      "split_rpc_ms": 25.75090000000273,
+      "serialization_ms": 0.6510000093840063,
+      "wire_bytes": 205975,
+      "stage_compute_ms": [
+        11.566000001039356,
+        10.279799986165017
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-12",
+          "decode_ms": 0.15189999248832464,
+          "compute_ms": 11.566000001039356,
+          "encode_ms": 0.06120000034570694,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.09079999290406704,
+          "parent_encode_ms": 0.06799999391660094,
+          "wire_bytes": 100446
+        },
+        {
+          "request_id": "batch-four-12",
+          "decode_ms": 0.13180001405999064,
+          "compute_ms": 10.279799986165017,
+          "encode_ms": 0.043599982745945454,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07880001794546843,
+          "parent_encode_ms": 0.024900014977902174,
+          "wire_bytes": 105529
+        }
+      ],
+      "ledger_ms": 4.810999999997875,
+      "create_ms": 1.6602999999995518,
+      "create_gas": "183244",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.9543999999987136,
+          "gas": "42969"
+        },
+        {
+          "wall_ms": 1.19629999999961,
+          "gas": "42981"
+        }
+      ],
+      "split_plus_ledger_ms": 30.56930000000284,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 13,
+      "local_first": false,
+      "local_compute_ms": 19.57360003143549,
+      "local_rpc_ms": 20.931699999997363,
+      "split_wall_ms": 23.219100025016814,
+      "split_rpc_ms": 24.543699999998353,
+      "serialization_ms": 0.9147999226115644,
+      "wire_bytes": 205974,
+      "stage_compute_ms": [
+        10.391300020273775,
+        10.244500008411705
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-13",
+          "decode_ms": 0.11490000179037452,
+          "compute_ms": 10.391300020273775,
+          "encode_ms": 0.2846000134013593,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.15389994950965047,
+          "parent_encode_ms": 0.059399986639618874,
+          "wire_bytes": 100445
+        },
+        {
+          "request_id": "batch-four-13",
+          "decode_ms": 0.12799998512491584,
+          "compute_ms": 10.244500008411705,
+          "encode_ms": 0.044599990360438824,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.06940000457689166,
+          "parent_encode_ms": 0.059999991208314896,
+          "wire_bytes": 105529
+        }
+      ],
+      "ledger_ms": 5.405200000001059,
+      "create_ms": 1.9349999999976717,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7184000000015658,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.751800000001822,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 29.96809999999823,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 14,
+      "local_first": true,
+      "local_compute_ms": 21.020499989390373,
+      "local_rpc_ms": 22.423500000000786,
+      "split_wall_ms": 23.96960003534332,
+      "split_rpc_ms": 25.907400000000052,
+      "serialization_ms": 0.6645998801104724,
+      "wire_bytes": 205973,
+      "stage_compute_ms": [
+        11.529700015671551,
+        10.29270002618432
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-14",
+          "decode_ms": 0.12649997370317578,
+          "compute_ms": 11.529700015671551,
+          "encode_ms": 0.08410000009462237,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.09789998875930905,
+          "parent_encode_ms": 0.062400009483098984,
+          "wire_bytes": 100446
+        },
+        {
+          "request_id": "batch-four-14",
+          "decode_ms": 0.13419997412711382,
+          "compute_ms": 10.29270002618432,
+          "encode_ms": 0.04379998426884413,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.08929998148232698,
+          "parent_encode_ms": 0.026399968191981316,
+          "wire_bytes": 105527
+        }
+      ],
+      "ledger_ms": 5.003000000000611,
+      "create_ms": 2.0609000000004016,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7154999999984284,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.2266000000017812,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 30.918099999998958,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 15,
+      "local_first": false,
+      "local_compute_ms": 21.56459999969229,
+      "local_rpc_ms": 22.794799999999668,
+      "split_wall_ms": 23.396499978844076,
+      "split_rpc_ms": 24.79569999999876,
+      "serialization_ms": 0.623399973846972,
+      "wire_bytes": 205974,
+      "stage_compute_ms": [
+        10.289400001056492,
+        11.162200011312962
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-15",
+          "decode_ms": 0.11509994510561228,
+          "compute_ms": 10.289400001056492,
+          "encode_ms": 0.06220000796020031,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.0955999712459743,
+          "parent_encode_ms": 0.06710004527121782,
+          "wire_bytes": 100446
+        },
+        {
+          "request_id": "batch-four-15",
+          "decode_ms": 0.13130001025274396,
+          "compute_ms": 11.162200011312962,
+          "encode_ms": 0.04610000178217888,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.08189998334273696,
+          "parent_encode_ms": 0.024100008886307478,
+          "wire_bytes": 105528
+        }
+      ],
+      "ledger_ms": 5.1106999999974505,
+      "create_ms": 2.0596999999979744,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7920999999987544,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.2589000000007218,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 29.914300000000367,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 16,
+      "local_first": true,
+      "local_compute_ms": 20.71099996101111,
+      "local_rpc_ms": 22.11239999999816,
+      "split_wall_ms": 22.426200041081756,
+      "split_rpc_ms": 23.761899999997695,
+      "serialization_ms": 0.7025000522844493,
+      "wire_bytes": 205972,
+      "stage_compute_ms": [
+        10.475900024175644,
+        9.823400003369898
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-16",
+          "decode_ms": 0.1197000383399427,
+          "compute_ms": 10.475900024175644,
+          "encode_ms": 0.06370001938194036,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.152900000102818,
+          "parent_encode_ms": 0.055699958465993404,
+          "wire_bytes": 100445
+        },
+        {
+          "request_id": "batch-four-16",
+          "decode_ms": 0.14940003165975213,
+          "compute_ms": 9.823400003369898,
+          "encode_ms": 0.04579999949783087,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07040001219138503,
+          "parent_encode_ms": 0.044899992644786835,
+          "wire_bytes": 105527
+        }
+      ],
+      "ledger_ms": 5.000699999996868,
+      "create_ms": 1.7021999999997206,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.0354999999981374,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.2629999999990105,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 28.770700000000943,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 17,
+      "local_first": false,
+      "local_compute_ms": 22.33070001238957,
+      "local_rpc_ms": 23.67580000000089,
+      "split_wall_ms": 22.954999993089586,
+      "split_rpc_ms": 24.337800000001153,
+      "serialization_ms": 0.6311999750323594,
+      "wire_bytes": 205973,
+      "stage_compute_ms": [
+        9.867999993730336,
+        11.07790000969544
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-17",
+          "decode_ms": 0.12909999350085855,
+          "compute_ms": 9.867999993730336,
+          "encode_ms": 0.07080001523718238,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.09310001041740179,
+          "parent_encode_ms": 0.06629998097196221,
+          "wire_bytes": 100445
+        },
+        {
+          "request_id": "batch-four-17",
+          "decode_ms": 0.12099999003112316,
+          "compute_ms": 11.07790000969544,
+          "encode_ms": 0.046200002543628216,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07730000652372837,
+          "parent_encode_ms": 0.027399975806474686,
+          "wire_bytes": 105528
+        }
+      ],
+      "ledger_ms": 5.492799999999988,
+      "create_ms": 2.183600000000297,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.915499999999156,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.3937000000005355,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 29.84389999999985,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 18,
+      "local_first": true,
+      "local_compute_ms": 21.868999989237636,
+      "local_rpc_ms": 23.265400000000227,
+      "split_wall_ms": 24.970700033009052,
+      "split_rpc_ms": 26.29190000000017,
+      "serialization_ms": 0.7446999661624432,
+      "wire_bytes": 205974,
+      "stage_compute_ms": [
+        11.621400015428662,
+        11.132000014185905
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-18",
+          "decode_ms": 0.11510000331327319,
+          "compute_ms": 11.621400015428662,
+          "encode_ms": 0.08919998072087765,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.1674999948590994,
+          "parent_encode_ms": 0.06809999467805028,
+          "wire_bytes": 100446
+        },
+        {
+          "request_id": "batch-four-18",
+          "decode_ms": 0.12779998360201716,
+          "compute_ms": 11.132000014185905,
+          "encode_ms": 0.05069997860118747,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07339997682720423,
+          "parent_encode_ms": 0.052900053560733795,
+          "wire_bytes": 105528
+        }
+      ],
+      "ledger_ms": 5.1380000000026484,
+      "create_ms": 1.6251000000011118,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.70509999999922,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.8078000000023167,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 31.437799999999697,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-four",
+      "sample": 19,
+      "local_first": false,
+      "local_compute_ms": 20.982099988032132,
+      "local_rpc_ms": 22.27740000000267,
+      "split_wall_ms": 22.479300037957728,
+      "split_rpc_ms": 23.813600000001315,
+      "serialization_ms": 0.9059000294655561,
+      "wire_bytes": 205972,
+      "stage_compute_ms": [
+        9.823500004131347,
+        10.33580000512302
+      ],
+      "stages": [
+        {
+          "request_id": "batch-four-19",
+          "decode_ms": 0.11560000712051988,
+          "compute_ms": 9.823500004131347,
+          "encode_ms": 0.06089999806135893,
+          "input_hash": "0x023d69b84747e3d7d2487d0a3075de303224879d2a202e686740369c6c99bfc2",
+          "output_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "parent_decode_ms": 0.12719997903332114,
+          "parent_encode_ms": 0.0638000201433897,
+          "wire_bytes": 100445
+        },
+        {
+          "request_id": "batch-four-19",
+          "decode_ms": 0.3981000045314431,
+          "compute_ms": 10.33580000512302,
+          "encode_ms": 0.043700041715055704,
+          "input_hash": "0xa0ed5bbfbf207c42f3a5deb6d51ce787223734b321c0286a564bdd779f93b872",
+          "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a",
+          "parent_decode_ms": 0.07200002437457442,
+          "parent_encode_ms": 0.02459995448589325,
+          "wire_bytes": 105527
+        }
+      ],
+      "ledger_ms": 5.0692999999992026,
+      "create_ms": 2.027799999999843,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7368999999998778,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.304599999999482,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 28.891499999997905,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x5aacf36a802ae134a8c99161a89c03621553352a9a3c09fdad9a448b06ef8a7a"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 0,
+      "local_first": true,
+      "local_compute_ms": 66.60949997603893,
+      "local_rpc_ms": 67.57469999999739,
+      "split_wall_ms": 72.25369999650866,
+      "split_rpc_ms": 73.26989999999932,
+      "serialization_ms": 0.8475000504404306,
+      "wire_bytes": 774051,
+      "stage_compute_ms": [
+        32.78469998622313,
+        35.49440001370385
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-0",
+          "decode_ms": 0.11570000788196921,
+          "compute_ms": 32.78469998622313,
+          "encode_ms": 0.10830000974237919,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.12550002429634333,
+          "parent_encode_ms": 0.06440002471208572,
+          "wire_bytes": 387495
+        },
+        {
+          "request_id": "batch-two-long-0",
+          "decode_ms": 0.15259999781847,
+          "compute_ms": 35.49440001370385,
+          "encode_ms": 0.05319999763742089,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.1647999742999673,
+          "parent_encode_ms": 0.063000014051795,
+          "wire_bytes": 386556
+        }
+      ],
+      "ledger_ms": 4.576099999998405,
+      "create_ms": 1.7691999999988184,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.6625999999996566,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1442999999999302,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 77.85250000000087,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 1,
+      "local_first": false,
+      "local_compute_ms": 70.45689999358729,
+      "local_rpc_ms": 71.4411,
+      "split_wall_ms": 71.11890002852306,
+      "split_rpc_ms": 71.97499999999854,
+      "serialization_ms": 0.7980000809766352,
+      "wire_bytes": 774052,
+      "stage_compute_ms": [
+        32.98110002651811,
+        34.77949998341501
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-1",
+          "decode_ms": 0.11500000255182385,
+          "compute_ms": 32.98110002651811,
+          "encode_ms": 0.11260004248470068,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.12799998512491584,
+          "parent_encode_ms": 0.06839999696239829,
+          "wire_bytes": 387495
+        },
+        {
+          "request_id": "batch-two-long-1",
+          "decode_ms": 0.15199999324977398,
+          "compute_ms": 34.77949998341501,
+          "encode_ms": 0.062700011767447,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.09460002183914185,
+          "parent_encode_ms": 0.06470002699643373,
+          "wire_bytes": 386557
+        }
+      ],
+      "ledger_ms": 4.568099999996775,
+      "create_ms": 1.485899999999674,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.6961999999984982,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.385999999998603,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 76.55019999999786,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 2,
+      "local_first": true,
+      "local_compute_ms": 68.7857000157237,
+      "local_rpc_ms": 69.78859999999986,
+      "split_wall_ms": 71.66179997147992,
+      "split_rpc_ms": 72.58889999999883,
+      "serialization_ms": 0.8571000653319061,
+      "wire_bytes": 774052,
+      "stage_compute_ms": [
+        33.062800008337945,
+        35.25810001883656
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-2",
+          "decode_ms": 0.1306000049225986,
+          "compute_ms": 33.062800008337945,
+          "encode_ms": 0.1066999975591898,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.12790004257112741,
+          "parent_encode_ms": 0.06239995127543807,
+          "wire_bytes": 387494
+        },
+        {
+          "request_id": "batch-two-long-2",
+          "decode_ms": 0.1580000389367342,
+          "compute_ms": 35.25810001883656,
+          "encode_ms": 0.05329999839887023,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.15470001380890608,
+          "parent_encode_ms": 0.06350001785904169,
+          "wire_bytes": 386558
+        }
+      ],
+      "ledger_ms": 5.930900000006659,
+      "create_ms": 2.1665000000029977,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7413000000015018,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 2.0231000000021595,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 78.52809999999954,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 3,
+      "local_first": false,
+      "local_compute_ms": 64.846099994611,
+      "local_rpc_ms": 65.76520000000164,
+      "split_wall_ms": 70.49750001169741,
+      "split_rpc_ms": 71.41959999999744,
+      "serialization_ms": 0.7848999812267721,
+      "wire_bytes": 774054,
+      "stage_compute_ms": [
+        32.86979999393225,
+        34.39600003184751
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-3",
+          "decode_ms": 0.11660001473501325,
+          "compute_ms": 32.86979999393225,
+          "encode_ms": 0.10579999070614576,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.13189995661377907,
+          "parent_encode_ms": 0.0659999786876142,
+          "wire_bytes": 387495
+        },
+        {
+          "request_id": "batch-two-long-3",
+          "decode_ms": 0.15250005526468158,
+          "compute_ms": 34.39600003184751,
+          "encode_ms": 0.05400000372901559,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.09180000051856041,
+          "parent_encode_ms": 0.06629998097196221,
+          "wire_bytes": 386559
+        }
+      ],
+      "ledger_ms": 5.245100000000093,
+      "create_ms": 1.745600000002014,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.1880999999993946,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.3113999999986845,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 76.67210000000341,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 4,
+      "local_first": true,
+      "local_compute_ms": 66.5632999734953,
+      "local_rpc_ms": 67.51889999999912,
+      "split_wall_ms": 76.00639999145642,
+      "split_rpc_ms": 76.85429999999906,
+      "serialization_ms": 1.1215999838896096,
+      "wire_bytes": 774054,
+      "stage_compute_ms": [
+        35.75809998437762,
+        36.568100040312856
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-4",
+          "decode_ms": 0.12550002429634333,
+          "compute_ms": 35.75809998437762,
+          "encode_ms": 0.10579999070614576,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.3077000146731734,
+          "parent_encode_ms": 0.06340001709759235,
+          "wire_bytes": 387495
+        },
+        {
+          "request_id": "batch-two-long-4",
+          "decode_ms": 0.2880999818444252,
+          "compute_ms": 36.568100040312856,
+          "encode_ms": 0.05189998773857951,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.09079999290406704,
+          "parent_encode_ms": 0.08839997462928295,
+          "wire_bytes": 386559
+        }
+      ],
+      "ledger_ms": 4.7928999999967346,
+      "create_ms": 1.8378999999986263,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7124999999978172,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.242500000000291,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 81.65389999999752,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 5,
+      "local_first": false,
+      "local_compute_ms": 66.5838000131771,
+      "local_rpc_ms": 67.43860000000132,
+      "split_wall_ms": 69.90230001974851,
+      "split_rpc_ms": 70.7455000000009,
+      "serialization_ms": 0.8440000237897038,
+      "wire_bytes": 774056,
+      "stage_compute_ms": [
+        31.898700050078332,
+        34.53720000106841
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-5",
+          "decode_ms": 0.14790002023801208,
+          "compute_ms": 31.898700050078332,
+          "encode_ms": 0.13160001253709197,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.13689999468624592,
+          "parent_encode_ms": 0.07080001523718238,
+          "wire_bytes": 387496
+        },
+        {
+          "request_id": "batch-two-long-5",
+          "decode_ms": 0.14599994756281376,
+          "compute_ms": 34.53720000106841,
+          "encode_ms": 0.053800002206116915,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.0990999978967011,
+          "parent_encode_ms": 0.05790003342553973,
+          "wire_bytes": 386560
+        }
+      ],
+      "ledger_ms": 4.864000000001397,
+      "create_ms": 2.228800000000774,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.5715000000018335,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.0636999999987893,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 75.6172000000006,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 6,
+      "local_first": true,
+      "local_compute_ms": 65.22869999753311,
+      "local_rpc_ms": 66.384399999999,
+      "split_wall_ms": 68.85520002106205,
+      "split_rpc_ms": 69.752199999999,
+      "serialization_ms": 0.7825000211596489,
+      "wire_bytes": 774054,
+      "stage_compute_ms": [
+        32.15210000053048,
+        33.39779999805614
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-6",
+          "decode_ms": 0.13130001025274396,
+          "compute_ms": 32.15210000053048,
+          "encode_ms": 0.10770000517368317,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.1249000197276473,
+          "parent_encode_ms": 0.0675999908708036,
+          "wire_bytes": 387495
+        },
+        {
+          "request_id": "batch-two-long-6",
+          "decode_ms": 0.15480001457035542,
+          "compute_ms": 33.39779999805614,
+          "encode_ms": 0.05339999916031957,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.08109997725114226,
+          "parent_encode_ms": 0.061700004152953625,
+          "wire_bytes": 386559
+        }
+      ],
+      "ledger_ms": 5.242899999997462,
+      "create_ms": 1.779499999996915,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.065600000001723,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.3977999999988242,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 75.00200000000041,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 7,
+      "local_first": false,
+      "local_compute_ms": 69.0160000231117,
+      "local_rpc_ms": 70.05299999999988,
+      "split_wall_ms": 73.79070000024512,
+      "split_rpc_ms": 74.66100000000006,
+      "serialization_ms": 0.9348000749014318,
+      "wire_bytes": 774052,
+      "stage_compute_ms": [
+        33.64380000857636,
+        36.49460000451654
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-7",
+          "decode_ms": 0.1218999968841672,
+          "compute_ms": 33.64380000857636,
+          "encode_ms": 0.18200004706159234,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.14780001947656274,
+          "parent_encode_ms": 0.06649998249486089,
+          "wire_bytes": 387494
+        },
+        {
+          "request_id": "batch-two-long-7",
+          "decode_ms": 0.1629000180400908,
+          "compute_ms": 36.49460000451654,
+          "encode_ms": 0.05370000144466758,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.09849999332800508,
+          "parent_encode_ms": 0.10150001617148519,
+          "wire_bytes": 386558
+        }
+      ],
+      "ledger_ms": 4.760899999997491,
+      "create_ms": 2.0502999999989697,
+      "create_gas": "183244",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.5934999999990396,
+          "gas": "42969"
+        },
+        {
+          "wall_ms": 1.117099999999482,
+          "gas": "42981"
+        }
+      ],
+      "split_plus_ledger_ms": 79.43050000000221,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 8,
+      "local_first": true,
+      "local_compute_ms": 67.35670001944527,
+      "local_rpc_ms": 68.31779999999708,
+      "split_wall_ms": 74.42090002587065,
+      "split_rpc_ms": 75.35559999999896,
+      "serialization_ms": 1.0285999742336571,
+      "wire_bytes": 774053,
+      "stage_compute_ms": [
+        35.84470000350848,
+        34.77220004424453
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-8",
+          "decode_ms": 0.12260000221431255,
+          "compute_ms": 35.84470000350848,
+          "encode_ms": 0.15879998682066798,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.1487999688833952,
+          "parent_encode_ms": 0.06320001557469368,
+          "wire_bytes": 387495
+        },
+        {
+          "request_id": "batch-two-long-8",
+          "decode_ms": 0.2949000336229801,
+          "compute_ms": 34.77220004424453,
+          "encode_ms": 0.05530001362785697,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.11989998165518045,
+          "parent_encode_ms": 0.06509997183457017,
+          "wire_bytes": 386558
+        }
+      ],
+      "ledger_ms": 5.149999999997817,
+      "create_ms": 1.8088999999999942,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7734999999993306,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.5675999999984924,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 80.51339999999982,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 9,
+      "local_first": false,
+      "local_compute_ms": 65.95149997156113,
+      "local_rpc_ms": 66.79980000000069,
+      "split_wall_ms": 71.96610001847148,
+      "split_rpc_ms": 72.86800000000221,
+      "serialization_ms": 0.8336000028066337,
+      "wire_bytes": 774055,
+      "stage_compute_ms": [
+        32.276000012643635,
+        36.31259995745495
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-9",
+          "decode_ms": 0.11920003453269601,
+          "compute_ms": 32.276000012643635,
+          "encode_ms": 0.1278999843634665,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.15870004426687956,
+          "parent_encode_ms": 0.06430002395063639,
+          "wire_bytes": 387495
+        },
+        {
+          "request_id": "batch-two-long-9",
+          "decode_ms": 0.14819996431469917,
+          "compute_ms": 36.31259995745495,
+          "encode_ms": 0.055500015150755644,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.09439996210858226,
+          "parent_encode_ms": 0.06539997411891818,
+          "wire_bytes": 386560
+        }
+      ],
+      "ledger_ms": 4.673499999997148,
+      "create_ms": 1.61620000000039,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.8044999999983702,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.2527999999983876,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 77.55099999999948,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 10,
+      "local_first": true,
+      "local_compute_ms": 68.2342000072822,
+      "local_rpc_ms": 69.19260000000213,
+      "split_wall_ms": 73.95419996464625,
+      "split_rpc_ms": 75.11799999999857,
+      "serialization_ms": 0.826600007712841,
+      "wire_bytes": 774056,
+      "stage_compute_ms": [
+        34.2411000165157,
+        36.15960001479834
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-10",
+          "decode_ms": 0.12619997141882777,
+          "compute_ms": 34.2411000165157,
+          "encode_ms": 0.1238000113517046,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.12320000678300858,
+          "parent_encode_ms": 0.06089999806135893,
+          "wire_bytes": 387495
+        },
+        {
+          "request_id": "batch-two-long-10",
+          "decode_ms": 0.1702999579720199,
+          "compute_ms": 36.15960001479834,
+          "encode_ms": 0.060999998822808266,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.10430003749206662,
+          "parent_encode_ms": 0.05690002581104636,
+          "wire_bytes": 386561
+        }
+      ],
+      "ledger_ms": 5.257600000000821,
+      "create_ms": 1.861400000001595,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.995999999999185,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.4002000000000407,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 80.38460000000123,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 11,
+      "local_first": false,
+      "local_compute_ms": 66.07629999052733,
+      "local_rpc_ms": 66.96779999999853,
+      "split_wall_ms": 73.13279999652877,
+      "split_rpc_ms": 73.99850000000151,
+      "serialization_ms": 0.8038999512791634,
+      "wire_bytes": 774058,
+      "stage_compute_ms": [
+        35.437599988654256,
+        34.358799981419
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-11",
+          "decode_ms": 0.12820004485547543,
+          "compute_ms": 35.437599988654256,
+          "encode_ms": 0.13770000077784061,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.1262999721802771,
+          "parent_encode_ms": 0.06890000076964498,
+          "wire_bytes": 387498
+        },
+        {
+          "request_id": "batch-two-long-11",
+          "decode_ms": 0.14349998673424125,
+          "compute_ms": 34.358799981419,
+          "encode_ms": 0.057999975979328156,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.08589995559304953,
+          "parent_encode_ms": 0.05540001438930631,
+          "wire_bytes": 386560
+        }
+      ],
+      "ledger_ms": 5.0921999999991385,
+      "create_ms": 2.0992999999980384,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.9249999999992724,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.0679000000018277,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 79.09950000000026,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 12,
+      "local_first": true,
+      "local_compute_ms": 67.36439996166155,
+      "local_rpc_ms": 68.35680000000139,
+      "split_wall_ms": 73.82910000160336,
+      "split_rpc_ms": 74.73549999999886,
+      "serialization_ms": 0.7995999767445028,
+      "wire_bytes": 774059,
+      "stage_compute_ms": [
+        34.65450002113357,
+        35.95250000944361
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-12",
+          "decode_ms": 0.12919999426230788,
+          "compute_ms": 34.65450002113357,
+          "encode_ms": 0.11150003410875797,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.13499998021870852,
+          "parent_encode_ms": 0.053800002206116915,
+          "wire_bytes": 387497
+        },
+        {
+          "request_id": "batch-two-long-12",
+          "decode_ms": 0.15799998072907329,
+          "compute_ms": 35.95250000944361,
+          "encode_ms": 0.053800002206116915,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.09159999899566174,
+          "parent_encode_ms": 0.06669998401775956,
+          "wire_bytes": 386562
+        }
+      ],
+      "ledger_ms": 4.580500000000029,
+      "create_ms": 1.6059999999997672,
+      "create_gas": "183244",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.605599999998958,
+          "gas": "42969"
+        },
+        {
+          "wall_ms": 1.3689000000013039,
+          "gas": "42981"
+        }
+      ],
+      "split_plus_ledger_ms": 79.3237999999983,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 13,
+      "local_first": false,
+      "local_compute_ms": 65.99149998510256,
+      "local_rpc_ms": 66.83190000000104,
+      "split_wall_ms": 73.06309998966753,
+      "split_rpc_ms": 74.56810000000041,
+      "serialization_ms": 0.8243999909609556,
+      "wire_bytes": 774059,
+      "stage_compute_ms": [
+        33.66010001627728,
+        35.78690002905205
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-13",
+          "decode_ms": 0.11939997784793377,
+          "compute_ms": 33.66010001627728,
+          "encode_ms": 0.11249998351559043,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.12989999959245324,
+          "parent_encode_ms": 0.06719998782500625,
+          "wire_bytes": 387497
+        },
+        {
+          "request_id": "batch-two-long-13",
+          "decode_ms": 0.15209999401122332,
+          "compute_ms": 35.78690002905205,
+          "encode_ms": 0.054800009820610285,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.12470001820474863,
+          "parent_encode_ms": 0.0638000201433897,
+          "wire_bytes": 386562
+        }
+      ],
+      "ledger_ms": 5.8946000000032654,
+      "create_ms": 1.6560000000026776,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 2.665400000001682,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.5731999999989057,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 80.47450000000026,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 14,
+      "local_first": true,
+      "local_compute_ms": 66.26729998970404,
+      "local_rpc_ms": 67.26269999999931,
+      "split_wall_ms": 74.34910000301898,
+      "split_rpc_ms": 75.23549999999886,
+      "serialization_ms": 0.8091000490821898,
+      "wire_bytes": 774058,
+      "stage_compute_ms": [
+        36.126799997873604,
+        34.81059998739511
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-14",
+          "decode_ms": 0.13429997488856316,
+          "compute_ms": 36.126799997873604,
+          "encode_ms": 0.11530000483617187,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.12800004333257675,
+          "parent_encode_ms": 0.05759997293353081,
+          "wire_bytes": 387498
+        },
+        {
+          "request_id": "batch-two-long-14",
+          "decode_ms": 0.1515000476501882,
+          "compute_ms": 34.81059998739511,
+          "encode_ms": 0.06709998706355691,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.0923000043258071,
+          "parent_encode_ms": 0.063000014051795,
+          "wire_bytes": 386560
+        }
+      ],
+      "ledger_ms": 4.695899999998801,
+      "create_ms": 1.9043999999994412,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.639100000000326,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1523999999990338,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 79.9398000000001,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 15,
+      "local_first": false,
+      "local_compute_ms": 70.39660000009462,
+      "local_rpc_ms": 71.39760000000024,
+      "split_wall_ms": 71.76760002039373,
+      "split_rpc_ms": 72.66370000000097,
+      "serialization_ms": 0.8350000716745853,
+      "wire_bytes": 774058,
+      "stage_compute_ms": [
+        33.56470004655421,
+        34.84610002487898
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-15",
+          "decode_ms": 0.1428000396117568,
+          "compute_ms": 33.56470004655421,
+          "encode_ms": 0.13620004756376147,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.1243999577127397,
+          "parent_encode_ms": 0.07509998977184296,
+          "wire_bytes": 387496
+        },
+        {
+          "request_id": "batch-two-long-15",
+          "decode_ms": 0.14910002937540412,
+          "compute_ms": 34.84610002487898,
+          "encode_ms": 0.053800002206116915,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.09169999975711107,
+          "parent_encode_ms": 0.0619000056758523,
+          "wire_bytes": 386562
+        }
+      ],
+      "ledger_ms": 4.924100000003818,
+      "create_ms": 1.7986000000018976,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7787000000025728,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.346799999999348,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 77.6111000000019,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 16,
+      "local_first": true,
+      "local_compute_ms": 65.85670000640675,
+      "local_rpc_ms": 66.8198999999986,
+      "split_wall_ms": 72.53060000948608,
+      "split_rpc_ms": 73.50580000000264,
+      "serialization_ms": 1.1331999558024108,
+      "wire_bytes": 774058,
+      "stage_compute_ms": [
+        34.522200003266335,
+        34.07819999847561
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-16",
+          "decode_ms": 0.28009997913613915,
+          "compute_ms": 34.522200003266335,
+          "encode_ms": 0.11110003106296062,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.12829998740926385,
+          "parent_encode_ms": 0.05679996684193611,
+          "wire_bytes": 387498
+        },
+        {
+          "request_id": "batch-two-long-16",
+          "decode_ms": 0.3299000090919435,
+          "compute_ms": 34.07819999847561,
+          "encode_ms": 0.05689996760338545,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.10659999679774046,
+          "parent_encode_ms": 0.06350001785904169,
+          "wire_bytes": 386560
+        }
+      ],
+      "ledger_ms": 4.631000000001222,
+      "create_ms": 1.66110000000117,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7936999999983527,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.1762000000016997,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 78.1436999999969,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 17,
+      "local_first": false,
+      "local_compute_ms": 66.89099996583536,
+      "local_rpc_ms": 67.77569999999832,
+      "split_wall_ms": 72.0508000231348,
+      "split_rpc_ms": 73.01749999999811,
+      "serialization_ms": 1.3090000138618052,
+      "wire_bytes": 774058,
+      "stage_compute_ms": [
+        33.71709998464212,
+        34.483700001146644
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-17",
+          "decode_ms": 0.5242999759502709,
+          "compute_ms": 33.71709998464212,
+          "encode_ms": 0.17659994773566723,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.1238000113517046,
+          "parent_encode_ms": 0.11780002387240529,
+          "wire_bytes": 387496
+        },
+        {
+          "request_id": "batch-two-long-17",
+          "decode_ms": 0.14760001795366406,
+          "compute_ms": 34.483700001146644,
+          "encode_ms": 0.05070003680884838,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.0906999921426177,
+          "parent_encode_ms": 0.07750000804662704,
+          "wire_bytes": 386562
+        }
+      ],
+      "ledger_ms": 5.03979999999865,
+      "create_ms": 1.9363999999986845,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7078000000001339,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.3955999999998312,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 78.06499999999869,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 18,
+      "local_first": true,
+      "local_compute_ms": 65.89740002527833,
+      "local_rpc_ms": 66.82540000000154,
+      "split_wall_ms": 71.68689998798072,
+      "split_rpc_ms": 72.5518000000011,
+      "serialization_ms": 0.7733001257292926,
+      "wire_bytes": 774059,
+      "stage_compute_ms": [
+        32.692299981135875,
+        35.735499986913055
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-18",
+          "decode_ms": 0.11650001397356391,
+          "compute_ms": 32.692299981135875,
+          "encode_ms": 0.10950001887977123,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.1238000113517046,
+          "parent_encode_ms": 0.058800040278583765,
+          "wire_bytes": 387498
+        },
+        {
+          "request_id": "batch-two-long-18",
+          "decode_ms": 0.15400000847876072,
+          "compute_ms": 35.735499986913055,
+          "encode_ms": 0.0570000265724957,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.09300000965595245,
+          "parent_encode_ms": 0.060699996538460255,
+          "wire_bytes": 386561
+        }
+      ],
+      "ledger_ms": 5.107100000001083,
+      "create_ms": 1.8140999999995984,
+      "create_gas": "183256",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.6936000000023341,
+          "gas": "42981"
+        },
+        {
+          "wall_ms": 1.5993999999991502,
+          "gas": "42993"
+        }
+      ],
+      "split_plus_ledger_ms": 77.66669999999795,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    },
+    {
+      "case": "batch-two-long",
+      "sample": 19,
+      "local_first": false,
+      "local_compute_ms": 65.03970001358539,
+      "local_rpc_ms": 66.01599999999962,
+      "split_wall_ms": 72.21189996926114,
+      "split_rpc_ms": 73.05159999999887,
+      "serialization_ms": 0.8387999841943383,
+      "wire_bytes": 774054,
+      "stage_compute_ms": [
+        34.097199968528,
+        34.79370003333315
+      ],
+      "stages": [
+        {
+          "request_id": "batch-two-long-19",
+          "decode_ms": 0.12139999307692051,
+          "compute_ms": 34.097199968528,
+          "encode_ms": 0.1170000177808106,
+          "input_hash": "0x3baa160faa889425d0c95f59e44896678c2312e4f358c3f00ebd9bf701c2394d",
+          "output_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "parent_decode_ms": 0.13940001372247934,
+          "parent_encode_ms": 0.06749999010935426,
+          "wire_bytes": 387494
+        },
+        {
+          "request_id": "batch-two-long-19",
+          "decode_ms": 0.14619994908571243,
+          "compute_ms": 34.79370003333315,
+          "encode_ms": 0.0597000471316278,
+          "input_hash": "0x5a398815f6f26ae60f0bf1c257664ca4b2191ba9acd47eb46e9441ba40f7df0c",
+          "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3",
+          "parent_decode_ms": 0.0923000043258071,
+          "parent_encode_ms": 0.09529996896162629,
+          "wire_bytes": 386560
+        }
+      ],
+      "ledger_ms": 5.583300000002055,
+      "create_ms": 1.692300000002433,
+      "create_gas": "183244",
+      "receipt_metrics": [
+        {
+          "wall_ms": 1.7731999999996333,
+          "gas": "42969"
+        },
+        {
+          "wall_ms": 2.1177999999999884,
+          "gas": "42981"
+        }
+      ],
+      "split_plus_ledger_ms": 78.64410000000134,
+      "max_absolute_error": 0,
+      "completed_stages": 2,
+      "output_hash": "0x42b0fbe451269424c62bba6a951b420e29c50624b5ab76f4ed4b2b023527d2b3"
+    }
+  ]
+}
