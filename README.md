@@ -1,5 +1,9 @@
 # Adaptive Inference Network
 
+> [!CAUTION]
+> **ARCHIVED: Educational Proof-of-Concept on off-chain compute boundaries. Not for production.**
+> This repository is no longer maintained. It measures what an on-chain receipt can and cannot prove about off-chain inference; it does **not** verify computation, has no consensus, slashing or payment safety, and its contracts have never been audited or deployed to a public network. Do not use it to move funds or as a basis for a production system.
+
 [![CI](https://github.com/suprkco/Blockchain-adaptive-inference-network/actions/workflows/ci.yml/badge.svg)](https://github.com/suprkco/Blockchain-adaptive-inference-network/actions/workflows/ci.yml)
 
 **A trained-model benchmark for split inference and blockchain accounting overhead.**
