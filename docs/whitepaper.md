@@ -252,4 +252,4 @@ After dependency installation, reproduce with `npm run benchmark` and `python -m
 
 ### Authorship and status
 
-Prepared by Kilian Codaccioni with AI-assisted research and drafting. This is a research proposal, not a peer-reviewed security proof, investment memorandum or novelty claim. No employer/client materials or upstream results are presented as original work. The project name has not undergone trademark clearance.
+This is a research proposal, not a peer-reviewed security proof, investment memorandum or novelty claim. No employer/client materials or upstream results are presented as original work. The project name has not undergone trademark clearance.
