@@ -2,7 +2,7 @@
 
 Status: accepted for the current research prototype, 30 September 2026.
 
-The supported deliverable is a trained-model benchmark for split inference and ledger overhead. It is not a deployable DePIN marketplace. The white paper preserves a longer-term research direction, with implemented and proposed features separated.
+The supported deliverable is a trained-model benchmark for split inference and ledger overhead. It is not a deployable DePIN marketplace. The [research roadmap](research-roadmap.md) preserves a longer-term research direction, with implemented and proposed features separated.
 
 ## Why mismatched hashes must not trigger slashing
 

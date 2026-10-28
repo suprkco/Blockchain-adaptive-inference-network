@@ -8,7 +8,7 @@
 
 **A trained-model benchmark for split inference and blockchain accounting overhead.**
 
-[White paper v0.2](docs/whitepaper.md) | [PDF](output/pdf/adaptive-inference-network-whitepaper-v0.2.pdf) | [Methodology](docs/benchmark.md) | [Verification decision](docs/verification-decision.md)
+[Methodology](docs/benchmark.md) | [Verification decision](docs/verification-decision.md)
 
 ## Problem
 
@@ -100,6 +100,6 @@ All 60 measured split results matched the local embeddings exactly in the record
 
 One host and local IPC do not measure WAN transfer, remote administration, real consensus, memory savings or fault recovery. Workers initially load the full checkpoint before retaining their assigned modules; peak initialization memory is not a sharding result. The benchmark has no concurrency sweep and uses three authored workloads, not an independent model-quality dataset. No adaptive scheduler, staking, cryptographic proof or governance system is implemented.
 
-Next: run the same protocol across two physical machines, add controlled link delays/bandwidth and outage schedules, then compare an ordinary receipt database with a genuine independently operated ledger. Verification experiments must define how correct execution is adjudicated before introducing penalties. The [white paper](docs/whitepaper.md) describes those research gates without presenting them as implemented.
+Next: run the same protocol across two physical machines, add controlled link delays/bandwidth and outage schedules, then compare an ordinary receipt database with a genuine independently operated ledger. Verification experiments must define how correct execution is adjudicated before introducing penalties. The [research roadmap](docs/research-roadmap.md) describes those research gates without presenting them as implemented.
 
 Model attribution: [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), Apache-2.0 according to its model card. Weights are downloaded, not republished. The original code is my own portfolio work. No employer/client materials. See [NOTICE](NOTICE) for retained educational contracts and their SPDX notices.
